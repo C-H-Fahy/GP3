@@ -1,0 +1,148 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.9
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Sep 04, 2015 at 02:17 PM
+-- Server version: 5.0.67
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `wcrugby15`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accessevents`
+--
+
+CREATE TABLE IF NOT EXISTS `accessevents` (
+  `card_id` int(11) default NULL,
+  `venue_id` int(11) default NULL,
+  `time` varchar(30) default NULL,
+  `date` date NOT NULL,
+  `authorised` int(1) default NULL 
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `accessevents`
+--
+
+INSERT INTO `accessevents` (`card_id`, `venue_id`, `time`, `date`, `authorised`) VALUES
+(1009, 1, '13:49:50', '2015-09-26', 1),
+(1009, 2, '13:50:01', '2015-09-26', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card`
+--
+
+CREATE TABLE IF NOT EXISTS `card` (
+  `card_id` int(11) NOT NULL,
+  `team_id` int(2) NOT NULL,
+  `valid_from` date default NULL,
+  `valid_to` date default NULL,
+  `active` int(1) default NULL,
+  `name` varchar(45) default NULL,
+  `role` varchar(45) default NULL
+  ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `card`
+--
+
+INSERT INTO `card` (`card_id`, `team_id`, `valid_from`, `valid_to`, `active`,`name`,`role` ) VALUES
+(1001, 1,'2015-09-18', '2015-10-31', 1,'Mr Chris Robshaw', 'Captain'),
+(1002, 2, '2015-09-18', '2015-10-31', 1,'Mr Dylan Hartley', 'Hooker'),
+(1003, 3, '2015-09-18', '2015-10-31', 1, 'Stuart Lancaster', 'Head Coach'),
+(1004, 4, '2015-09-18', '2015-10-31', 1, 'Ms Anna Glowacka', 'Physiotherapist'),
+(1005, 1, '2015-09-18', '2015-10-31', 1, 'Mr Dan Care', 'Scrum-half'),
+(1006, 2, '2015-09-18', '2015-10-31', 1, 'Mr Warren Gatland', 'Head Coach'),
+(1007, 3, '2015-09-18', '2015-10-31', 1,'Mr Jake Ball', 'Lock'),
+(1008, 4, '2015-09-18', '2015-10-31', 1,'Mr Rhys Webb', 'Scrum-half'),
+(1009, 1, '2015-09-18', '2015-10-31', 1, 'Dr Vito Gelato', 'Doctor'),
+(1010, 2, '2015-09-18', '2015-10-31', 1, 'Mr John McKee', 'Head Coach'),
+(1011, 3, '2015-09-18', '2015-10-31', 1, 'Mr Akepusi Qera', 'Captain(Flanker)'),
+(1012, 4, '2015-09-18', '2015-10-31', 1, 'Mr Alepati Ratini', 'Wing'),
+(1013, 1, '2015-09-18', '2015-10-31', 1, 'Mr Peni Ravai', 'Hooker'),
+(1014, 2, '2015-09-18', '2015-10-31', 1, 'Dr Mary Rose', 'Doctor'),
+(1015, 3, '2015-09-18', '2015-10-31', 1, 'Mr Tom English', 'Wing'),
+(1016, 4, '2015-09-18', '2015-10-31', 1, 'Mr Alejo Durán', 'Scrum-half''');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fixture`
+--
+
+CREATE TABLE IF NOT EXISTS `fixture` (
+  `venue_id` int(11) default NULL,
+  `team_1_id` int(11) default NULL,
+  `team_2_id` int(11) default NULL,
+  `date` date default NULL,
+  `stage` varchar(30) NOT NULL  
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `fixture`
+--
+
+INSERT INTO `fixture` (`venue_id`, `team_1_id`, `team_2_id`, `date`, `stage`) VALUES
+(1, 1, 3, '2015-09-18', 'Pool Stage'),
+( 2, 4, 3, '2015-09-23', 'Pool Stage'),
+(1, 1, 2, '2015-09-26', 'Pool Stage'),
+(3, 4, 5, '2015-09-27', 'Pool Stage'),
+(1, 1, 4, '2015-10-03', 'Pool Stage');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+CREATE TABLE IF NOT EXISTS `team` (
+  `id` int(11) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  `nickname` varchar(30) NOT NULL,
+  `union` varchar(30) NOT NULL,
+  `acronym` varchar(30) NOT NULL,
+  `eliminated` int(1) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `team`
+--
+
+INSERT INTO `team` (`id`, `country`, `nickname`, `union`, `acronym`, `eliminated`) VALUES
+(1, 'England', 'England', 'Rugby Football Union', 'RFU', 0),
+(2, 'Wales', 'Red Dragons', 'Welsh Rugby Union', 'WRU', 0),
+(3, 'Fiji', 'Flying Fijians', 'Fiji Rugby Union', 'FRU', 0),
+(4, 'Australia', 'Wallabies', 'Australian Rugby Union', 'ARU', 0),
+(5, 'Uruguay', 'Teros', 'Unión de Rugby del Uruguay', 'URU', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `venue`
+--
+
+CREATE TABLE IF NOT EXISTS `venue` (
+  `venue` int(11) NOT NULL,
+  `stadium` varchar(45) default NULL,
+  `location` varchar(45) default NULL
+  ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `venue`
+--
+
+INSERT INTO `venue` (`venue`, `stadium`, `location`) VALUES
+(1, 'Twickenham', 'London'),
+(2, 'Millenium', 'Cardiff'),
+(3, 'Villa Park', 'Birmingham'),
+(4, 'Stadium MK', 'Milton Keynes');
