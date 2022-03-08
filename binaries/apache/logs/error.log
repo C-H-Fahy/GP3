@@ -324,24 +324,3 @@
 [Sat Feb 26 12:24:22.605502 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00422: Parent: Received shutdown signal -- Shutting down the server.
 [Sat Feb 26 12:24:27.917973 2022] [mpm_winnt:notice] [pid 3372:tid 632] AH00364: Child: All worker threads have exited.
 [Sat Feb 26 12:24:28.414115 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00430: Parent: Child process 3372 exited successfully.
-[Tue Mar 08 15:23:37.297047 2022] [mpm_winnt:notice] [pid 3068:tid 612] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
-[Tue Mar 08 15:23:37.297047 2022] [mpm_winnt:notice] [pid 3068:tid 612] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
-[Tue Mar 08 15:23:37.297047 2022] [core:notice] [pid 3068:tid 612] AH00094: Command line: 'C:\\Users\\vm\\Desktop\\GP3-main\\GP3-main\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/vm/Desktop/GP3-main/GP3-main/binaries/apache'
-[Tue Mar 08 15:23:37.297047 2022] [mpm_winnt:notice] [pid 3068:tid 612] AH00418: Parent: Created child process 9160
-[Tue Mar 08 15:23:38.000015 2022] [mpm_winnt:notice] [pid 9160:tid 680] AH00354: Child: Starting 64 worker threads.
-[Tue Mar 08 15:24:00.038648 2022] [mpm_winnt:notice] [pid 3068:tid 612] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Tue Mar 08 15:24:02.069829 2022] [mpm_winnt:notice] [pid 9160:tid 680] AH00364: Child: All worker threads have exited.
-[Tue Mar 08 15:24:02.101271 2022] [mpm_winnt:notice] [pid 3068:tid 612] AH00430: Parent: Child process 9160 exited successfully.
-[Tue Mar 08 15:24:30.038313 2022] [mpm_winnt:notice] [pid 9024:tid 536] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
-[Tue Mar 08 15:24:30.038313 2022] [mpm_winnt:notice] [pid 9024:tid 536] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
-[Tue Mar 08 15:24:30.038313 2022] [core:notice] [pid 9024:tid 536] AH00094: Command line: 'C:\\Users\\vm\\Desktop\\GP3-main\\GP3-main\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/vm/Desktop/GP3-main/GP3-main/binaries/apache'
-[Tue Mar 08 15:24:30.038313 2022] [mpm_winnt:notice] [pid 9024:tid 536] AH00418: Parent: Created child process 1676
-[Tue Mar 08 15:24:30.710705 2022] [mpm_winnt:notice] [pid 1676:tid 672] AH00354: Child: Starting 64 worker threads.
-[Tue Mar 08 15:30:55.991407 2022] [mpm_winnt:notice] [pid 9024:tid 536] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Tue Mar 08 15:30:58.010075 2022] [mpm_winnt:notice] [pid 1676:tid 672] AH00364: Child: All worker threads have exited.
-[Tue Mar 08 15:30:58.041538 2022] [mpm_winnt:notice] [pid 9024:tid 536] AH00430: Parent: Child process 1676 exited successfully.
-[Tue Mar 08 15:31:07.221687 2022] [mpm_winnt:notice] [pid 7248:tid 236] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
-[Tue Mar 08 15:31:07.221687 2022] [mpm_winnt:notice] [pid 7248:tid 236] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
-[Tue Mar 08 15:31:07.221687 2022] [core:notice] [pid 7248:tid 236] AH00094: Command line: 'C:\\Users\\vm\\Desktop\\GP3-main\\GP3-main\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/vm/Desktop/GP3-main/GP3-main/binaries/apache'
-[Tue Mar 08 15:31:07.221687 2022] [mpm_winnt:notice] [pid 7248:tid 236] AH00418: Parent: Created child process 3988
-[Tue Mar 08 15:31:07.878054 2022] [mpm_winnt:notice] [pid 3988:tid 660] AH00354: Child: Starting 64 worker threads.
