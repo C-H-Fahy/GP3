@@ -21,7 +21,7 @@
 		<li><a href='<?php echo site_url('main/cinema')?>'>Cinema</a></li>
 		<li><a href='<?php echo site_url('main/screen')?>'>Screen</a></li>
 		<li><a href='<?php echo site_url('main/film')?>'>Films</a></li>
-		<li><a href='<?php echo site_url('main/member')?>'>Members</a></li>
+		<li><a href='<?php echo site_url('main/orderline')?>'>Members</a></li>
 			<li><a href='<?php echo site_url('main/performance')?>'>Performance</a></li>
 			<li><a href='<?php echo site_url('main/booking')?>'>Booking</a></li>
 
