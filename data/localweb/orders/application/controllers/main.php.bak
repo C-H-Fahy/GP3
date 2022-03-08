@@ -168,9 +168,9 @@ class Main extends CI_Controller {
 		$this->member_output($output);
 	}
 	
-	function member_output($output = null)
+	function orderline_output($output = null)
 	{
-		$this->load->view('member_view.php', $output);
+		$this->load->view('orderline_view.php', $output);
 	}
 	
 	public function querynav()

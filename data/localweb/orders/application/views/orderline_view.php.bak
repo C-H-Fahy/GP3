@@ -15,7 +15,7 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 
-<h1>Cinemas</h1>
+<h1>Order Line</h1>
     <div>
 		<?php echo $output; ?>
     </div>
