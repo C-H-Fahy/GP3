@@ -1,0 +1,2 @@
+Database Exports are in DatabaseExport
+To import a Database go to phpmyadmin(normally http://127.0.0.1/phpmyadmin) go to the import tab then select the database you want import
