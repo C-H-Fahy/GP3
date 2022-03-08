@@ -16,7 +16,7 @@
 <p class="p-centre"> Are you a member or the director?.</p>
  <ul id="nav">
  <li> <a href='<?php echo site_url('')?>'>Member</a></li>
- <li> <a href='<?php echo site_url('')?>'>Director</a></li>
+ <li> <a href='<?php echo site_url('')?>'>Directpr</a></li>
  </ul>
 
 
