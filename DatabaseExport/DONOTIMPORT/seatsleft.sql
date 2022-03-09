@@ -1,4 +1,4 @@
-SELECT Performance.*, Screen.seats - IFNULL(sum(booking.seats), 0)
+SELECT Performance.*, Screen.seats - IFNULL(sum(booking.seats), 0) as seatsleft
 FROM Booking
 RIGHT JOIN Performance
 ON (Performance.id = booking.performance)
