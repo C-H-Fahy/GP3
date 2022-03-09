@@ -41,7 +41,7 @@ CREATE TABLE Member(
     title char(15),
     name char(255),
     joined date,
-    active bool,
+    active char(31),
     Primary Key(ID)
     );
 CREATE TABLE Booking(
@@ -53,3 +53,4 @@ CREATE TABLE Booking(
     FOREIGN KEY (member) REFERENCES Member(ID),
     FOREIGN KEY (performance) REFERENCES Performance(ID)
     );
+
