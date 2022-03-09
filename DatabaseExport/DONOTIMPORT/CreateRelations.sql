@@ -10,8 +10,8 @@ CREATE TABLE Cinema(
 CREATE TABLE Screen(
     cinema int, 
     screen int,
-    seats int,
-    price int,
+    seats int NOT NULL,
+    price int NOT NULL,
     FOREIGN KEY(cinema) REFERENCES Cinema(id),
     PRIMARY KEY(cinema, screen)
     );
@@ -24,8 +24,8 @@ CREATE TABLE Film(
     );
 CREATE TABLE Performance(
     id int,
-    cinema int,
-    screen int,
+    cinema int NOT NULL,
+    screen int NOT NULL,
     film int,
     date date,
     time time,
@@ -46,8 +46,8 @@ CREATE TABLE Member(
 CREATE TABLE Booking(
     id int,
     member int,
-    performance int,
-    seats int,
+    performance int NOT NULL,
+    seats int NOT NULL,
     Primary Key(ID),
     FOREIGN KEY (member) REFERENCES Member(ID),
     FOREIGN KEY (performance) REFERENCES Performance(ID)
