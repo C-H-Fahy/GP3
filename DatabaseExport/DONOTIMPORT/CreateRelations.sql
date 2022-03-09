@@ -29,7 +29,6 @@ CREATE TABLE Performance(
     film int,
     date date,
     time time,
-    seatsleft int,
     PRIMARY KEY(id),
     FOREIGN KEY (cinema) REFERENCES cinema(ID), 
     FOREIGN KEY (film) REFERENCES Film(ID)
