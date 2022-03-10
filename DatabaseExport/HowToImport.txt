@@ -1,0 +1,6 @@
+Note to teammates:
+Database Exports are in DatabaseExport
+To import a Database go to phpmyadmin(normally http://127.0.0.1:8080/phpmyadmin) go to the import tab then select the database you want import
+
+You may want to drop all tables before importing this can be done in the Structure tab by pressing the "Drop" button
+(unfortunately EasyPHP disables drop database)
