@@ -66,30 +66,36 @@ class Main extends CI_Controller {
 		
 		
 		$crud->required_fields('cinema', 'screen_no.', 'seats');
-		
+		$crud->set_relation('cinema','Cinema','name');
 		
 		
 		$output = $crud->render();
 		$this->screen_output($output);
 	}
 	
-	public function performance()
-	{	
-		$this->load->view('header');
-		$crud = new grocery_CRUD();
-		$crud->set_theme('datatables');
-		
-		$crud->set_table('performance');
-		$crud->set_subject('performance');
-		$crud->required_fields('cinema', 'screen_no.', 'seats left');
-		
-		
-		
-		
-		$output = $crud->render();
-		$this->performance_output($output);
-	}
-	
+    public function performance()
+    {
+        $crud = new grocery_CRUD();
+        $crud->set_model('custom_model');
+        $crud->set_table('performance');
+        $crud->basic_model->set_query_str(
+        '    SELECT Performance.*, Cinema.name as cinema_name, film.title as film_title, Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
+            FROM Booking
+            RIGHT JOIN Performance
+            ON (Performance.id = booking.performance)
+            JOIN Screen
+            ON ((Performance.screen = Screen.screen) AND (Performance.cinema = Screen.Cinema))
+            JOIN Film
+            ON (Performance.film = film.id)
+            JOIN Cinema
+            ON (Performance.cinema = cinema.id)
+            GROUP BY performance.id
+        '
+        );
+        $crud->columns(['id','cinema', 'cinema_name', 'screen','film', 'film_title', 'date', 'time', 'seats_left']);
+        $output = $crud->render();
+        $this->screen_output($output);
+    }
 	function performance_output($output = null)
 	{
 		$this->load->view('performance_view.php', $output);
