@@ -75,6 +75,7 @@ class Main extends CI_Controller {
 	
     public function performance()
     {
+		$this->load->view('header');
         $crud = new grocery_CRUD();
         $crud->set_model('custom_model');
         $crud->set_table('performance');
