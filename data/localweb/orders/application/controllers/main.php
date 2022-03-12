@@ -92,7 +92,7 @@ class Main extends CI_Controller {
             GROUP BY performance.id
         '
         );
-        $crud->columns(['id','cinema', 'cinema_name', 'screen','film', 'film_title', 'date', 'time', 'seats_left']);
+        $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
         $output = $crud->render();
         $this->screen_output($output);
     }
