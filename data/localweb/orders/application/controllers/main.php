@@ -178,6 +178,17 @@ class Main extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('querynav_view');
 	}
+
+public function register()
+	{	
+		$this->load->view('header');
+		$this->load->view('register');
+	}
+public function login()
+	{	
+		$this->load->view('header');
+		$this->load->view('login');
+	}
 		
 	public function query1()
 	{	
