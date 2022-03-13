@@ -13,11 +13,15 @@
 
 <h1>Mice cinemas</h1>
 
-<p class="p-centre"> Are you a member or the director?.</p>
- <ul id="nav">
- <li> <a href='<?php echo site_url('')?>'>Member</a></li>
- <li> <a href='<?php echo site_url('')?>'>Director</a></li>
- </ul>
+<p class="p-centre">You are <?php 
+session_start();
+
+if($_SESSION && $_SESSION["loggedin"]){
+    echo " a " . $_SESSION["role"];
+}else{
+    echo " not logged in";
+}
+?>.</p>
 
 
 </div>
