@@ -6,14 +6,11 @@ use GroceryCrud\Core\Model;
     	function __construct() {
     		parent::__construct();
     	}
-
     	function get_list() {
     		$query=$this->db->query($this->query_str);
-
     		$results=$query->result();
     		return $results;
     	}
-
     	public function set_query_str($query) {
     		$this->query_str = $query;
     	}
