@@ -79,7 +79,7 @@ class Main extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->set_model('custom_model');
         $crud->set_table('performance');
-        $crud->basic_model->set_query_str(
+        $crud->basic_model->set_query(
         '    SELECT Performance.*, Cinema.name as cinema_name, film.title as film_title, Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
             FROM Booking
             RIGHT JOIN Performance

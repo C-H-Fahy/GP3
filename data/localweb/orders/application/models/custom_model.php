@@ -10,7 +10,7 @@ use GroceryCrud\Core\Model;
     		$results=$query->result();
     		return $results;
     	}
-    	public function set_query_str($query) {
+    	public function set_query($query) {
     		$this->query_str = $query;
     	}
     }
