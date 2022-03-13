@@ -24,6 +24,7 @@
 		<li><a href='<?php echo site_url('main/member')?>'>Members</a></li>
 			<li><a href='<?php echo site_url('main/performance')?>'>Performance</a></li>
 			<li><a href='<?php echo site_url('main/booking')?>'>Booking</a></li>
+<li><a href='<?php echo site_url('main/register')?>'>Register</a></li>
 
 			</ul>
 			
