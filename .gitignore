@@ -1,2 +1,6 @@
-
+*.txt
+*.dat
+*.ini
+*.log
+*.exe
 binaries/
