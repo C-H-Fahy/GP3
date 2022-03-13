@@ -109,7 +109,6 @@ INSERT INTO `film` (`id`, `released`, `title`, `director`) VALUES
 --
 -- Table structure for table `member`
 --
-
 CREATE TABLE IF NOT EXISTS `member` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `title` char(15) DEFAULT NULL,
@@ -117,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `joined` date DEFAULT NULL,
   `active` char(31) DEFAULT NULL DEFAULT 'Active',
   `role_type` char(16) DEFAULT 'member',
-  `password` char(32) NOT NULL,
+  `password` char(100) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -126,14 +125,17 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`title`, `name`, `joined`, `active`, `password`) VALUES
-('Ms', 'Helen Miranda', '2017-12-21', 'Active'),
-('Mr', 'Jose Alves', '2017-12-27', 'Active'),
-('Dr', 'Vito Gelato', '2018-01-06', 'Lapsed'),
-('Dr', 'Guy Redmond', '2018-02-09', 'Active'),
-('Ms', 'Maria Partou', '2018-03-11', 'Active'),
-('Ms', 'Lindsay White', '2018-03-16', 'Cancelled'),
-('Mr', 'David Wilkinson', '2018-03-18', 'Active'),
-('Ms', 'Olenka Sama', '2018-12-12', 'Active');
+('Ms', 'Helen Miranda', '2017-12-21', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Mr', 'Jose Alves', '2017-12-27', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Dr', 'Guy Redmond', '2018-02-09', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Ms', 'Maria Partou', '2018-03-11', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Ms', 'Lindsay White', '2018-03-16', 'Cancelled', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Mr', 'David Wilkinson', '2018-03-18', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+('Ms', 'Olenka Sama', '2018-12-12', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+
+INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+('Ms', 'admin-test', '2017-12-21', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
 -- --------------------------------------------------------
 
