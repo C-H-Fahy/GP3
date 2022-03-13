@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 use GroceryCrud\Core\Model;
     class custom_model extends grocery_CRUD_model {
-
     	private  $query = '';
     	function __construct() {
     		parent::__construct();
