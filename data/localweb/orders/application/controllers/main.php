@@ -64,7 +64,7 @@ class Main extends CI_Controller {
 		$crud->set_table('screen');
 		$crud->set_subject('screen');
 		
-		
+		$crud->callback_column('price', array($this, 'toprice'));	
 		$crud->required_fields('cinema', 'screen_no.', 'seats');
 		$crud->set_relation('cinema','Cinema','name');
 		
@@ -72,27 +72,30 @@ class Main extends CI_Controller {
 		$output = $crud->render();
 		$this->screen_output($output);
 	}
-	
-    public function performance()
-    {
+	function toprice($value, $row)
+	{
+		return ('&pound;'.($value/100));
+	}
+	public function performance()
+	{
 		$this->load->view('header');
-        $crud = new grocery_CRUD();
-        $crud->set_model('custom_model');
-        $crud->set_table('performance');
-        $crud->basic_model->set_query(
-        '    SELECT Performance.*, Cinema.name as cinema_name, film.title as film_title, Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
-            FROM Booking
-            RIGHT JOIN Performance
-            ON (Performance.id = booking.performance)
-            JOIN Screen
-            ON ((Performance.screen = Screen.screen) AND (Performance.cinema = Screen.Cinema))
-            JOIN Film
-            ON (Performance.film = film.id)
-            JOIN Cinema
-            ON (Performance.cinema = cinema.id)
-            GROUP BY performance.id
-        '
-        );
+		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
+		$crud->set_table('performance');
+		$crud->basic_model->set_query(
+			'SELECT Performance.*, Cinema.name as cinema_name, film.title as film_title, Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
+			FROM Booking
+			RIGHT JOIN Performance
+			ON (Performance.id = booking.performance)
+			JOIN Screen
+			ON ((Performance.screen = Screen.screen) AND (Performance.cinema = Screen.Cinema))
+			JOIN Film
+			ON (Performance.film = film.id)
+			JOIN Cinema
+			ON (Performance.cinema = cinema.id)
+			GROUP BY performance.id
+			')
+		;
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
         $output = $crud->render();
         $this->screen_output($output);
