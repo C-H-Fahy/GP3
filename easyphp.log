@@ -413,22 +413,143 @@
 01/10 19:13:23 EasyPHP Apache stop event: ap6388_shutdown
 01/10 19:13:24 EasyPHP MySqlSutdown event = MySQLShutdown17460
 01/10 19:13:24 EasyPHP End EasyPHP...
-26/02 11:55:11 EasyPHP EasyPHP Servers starting
-26/02 11:55:21 EasyPHP VerifyConfFile : WaitForSingleObject timeout for pid 3540
-26/02 11:55:21 EasyPHP Apache ServerBase::Start ScanProcess -> 8716
-26/02 11:55:21 EasyPHP CreateProcess "C:\Users\charlie\DOWNLO~1\EASYPH~1\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\charlie\DOWNLO~1\EASYPH~1\EASYPH~1\binaries\mysql\my.ini" --language=english"
-26/02 11:55:26 EasyPHP EasyPHP Check version
-26/02 11:57:46 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 8716) error 87
-26/02 11:57:46 EasyPHP Apache  Unexpected end of Apache !
-26/02 12:05:39 EasyPHP EasyPHP Stop the servers
-26/02 12:05:39 EasyPHP MySqlSutdown event = MySQLShutdown764
-26/02 12:05:39 EasyPHP End EasyPHP...
-26/02 12:05:42 EasyPHP EasyPHP Servers starting
-26/02 12:05:50 EasyPHP Apache CreateProcess "C:\Users\charlie\DOWNLO~1\EASYPH~1\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
-26/02 12:05:51 EasyPHP CreateProcess "C:\Users\charlie\DOWNLO~1\EASYPH~1\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\charlie\DOWNLO~1\EASYPH~1\EASYPH~1\binaries\mysql\my.ini" --language=english"
-26/02 12:05:55 EasyPHP EasyPHP Check version
-26/02 12:24:22 EasyPHP EasyPHP Stop the servers
-26/02 12:24:22 EasyPHP Apache stop event: ap8924_shutdown
-26/02 12:24:23 EasyPHP MySqlSutdown event = MySQLShutdown6024
-26/02 12:24:26 EasyPHP EasyPHP Stop the servers
-26/02 12:24:26 EasyPHP End EasyPHP...
+09/03 19:53:09 EasyPHP EasyPHP Servers starting
+09/03 19:53:10 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+09/03 19:53:10 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+09/03 19:53:15 EasyPHP EasyPHP Check version
+09/03 21:24:33 EasyPHP Apache stop event: ap13072_shutdown
+09/03 21:24:35 EasyPHP MySqlSutdown event = MySQLShutdown34592
+09/03 21:24:36 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 13072) error 5
+09/03 21:24:37 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 34592) error 5
+09/03 21:24:39 EasyPHP EasyPHP Stop the servers
+09/03 21:24:39 EasyPHP End EasyPHP...
+10/03 11:55:56 EasyPHP EasyPHP Servers starting
+10/03 11:55:57 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+10/03 11:55:57 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+10/03 11:56:02 EasyPHP EasyPHP Check version
+10/03 17:38:35 EasyPHP EasyPHP Stop the servers
+10/03 17:38:35 EasyPHP Apache stop event: ap3892_shutdown
+10/03 17:38:36 EasyPHP MySqlSutdown event = MySQLShutdown28676
+10/03 17:38:36 EasyPHP End EasyPHP...
+11/03 10:03:31 EasyPHP EasyPHP Servers starting
+11/03 10:03:32 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 10:03:32 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:03:37 EasyPHP EasyPHP Check version
+11/03 10:03:38 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 10460) error 5
+11/03 10:03:38 EasyPHP MySql   Unexpected end of MySql !
+11/03 10:03:47 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:03:50 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 9048) error 5
+11/03 10:03:50 EasyPHP MySql   Unexpected end of MySql !
+11/03 10:03:53 EasyPHP EasyPHP Stop the servers
+11/03 10:03:53 EasyPHP Apache stop event: ap16340_shutdown
+11/03 10:03:54 EasyPHP End EasyPHP...
+11/03 10:05:56 EasyPHP EasyPHP Servers starting
+11/03 10:05:56 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 10:05:56 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:05:58 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 18268) error 5
+11/03 10:05:58 EasyPHP MySql   Unexpected end of MySql !
+11/03 10:06:01 EasyPHP EasyPHP Check version
+11/03 10:07:25 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:07:28 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16432) error 5
+11/03 10:07:28 EasyPHP MySql   Unexpected end of MySql !
+11/03 10:08:59 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:09:02 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 3644) error 5
+11/03 10:09:02 EasyPHP MySql   Unexpected end of MySql !
+11/03 10:09:22 EasyPHP EasyPHP Stop the servers
+11/03 10:09:22 EasyPHP Apache stop event: ap15340_shutdown
+11/03 10:09:23 EasyPHP End EasyPHP...
+11/03 10:17:01 EasyPHP EasyPHP Servers starting
+11/03 10:17:02 EasyPHP EasyPHP Error in Apache configuration file.
+11/03 10:17:07 EasyPHP Apache VerifyConfFile fail...
+11/03 10:17:07 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:17:08 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16136) error 5
+11/03 10:17:08 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16136) error 5
+11/03 10:17:09 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16136) error 5
+11/03 10:17:10 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16136) error 5
+11/03 10:17:11 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 16136) error 5
+11/03 10:17:12 EasyPHP EasyPHP Stop the servers
+11/03 10:17:12 EasyPHP End EasyPHP...
+11/03 10:17:22 EasyPHP EasyPHP Servers starting
+11/03 10:17:23 EasyPHP EasyPHP Error in Apache configuration file.
+11/03 10:17:25 EasyPHP Apache VerifyConfFile fail...
+11/03 10:17:25 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:17:26 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:27 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:27 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:28 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:29 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:29 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:30 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 15892) error 5
+11/03 10:17:30 EasyPHP EasyPHP Check version
+11/03 10:18:18 EasyPHP Apache  Configuration file changed
+11/03 10:18:22 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 10:18:41 EasyPHP EasyPHP Stop the servers
+11/03 10:18:41 EasyPHP Apache stop event: ap18088_shutdown
+11/03 10:18:42 EasyPHP End EasyPHP...
+11/03 10:19:41 EasyPHP EasyPHP Servers starting
+11/03 10:19:42 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 10:19:42 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 10:19:47 EasyPHP EasyPHP Check version
+11/03 10:58:54 EasyPHP EasyPHP Servers are restarting...
+11/03 10:58:55 EasyPHP Apache restart event: ap1508_restart
+11/03 10:58:55 EasyPHP MySqlSutdown event = MySQLShutdown7312
+11/03 10:58:58 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 7312) error 5
+11/03 10:58:58 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 11:03:11 EasyPHP EasyPHP Stop the servers
+11/03 11:03:11 EasyPHP Apache stop event: ap1508_shutdown
+11/03 11:03:12 EasyPHP MySqlSutdown event = MySQLShutdown14264
+11/03 11:03:12 EasyPHP End EasyPHP...
+11/03 13:45:48 EasyPHP EasyPHP Servers starting
+11/03 13:45:49 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 13:45:49 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 13:45:54 EasyPHP EasyPHP Check version
+11/03 14:30:53 EasyPHP Apache restart event: ap352_restart
+11/03 14:30:57 EasyPHP Apache restart event: ap352_restart
+11/03 14:31:00 EasyPHP Apache stop event: ap352_shutdown
+11/03 14:31:03 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 352) error 5
+11/03 14:31:05 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 14:33:34 EasyPHP MySqlSutdown event = MySQLShutdown2016
+11/03 14:33:35 EasyPHP Apache stop event: ap11376_shutdown
+11/03 14:33:37 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 2016) error 5
+11/03 14:33:37 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 11376) error 5
+11/03 14:33:39 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+11/03 14:33:40 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+11/03 15:05:24 EasyPHP Apache stop event: ap1228_shutdown
+11/03 15:05:26 EasyPHP MySqlSutdown event = MySQLShutdown14796
+11/03 15:05:26 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 1228) error 5
+11/03 15:05:29 EasyPHP EasyPHP Stop the servers
+11/03 15:05:29 EasyPHP End EasyPHP...
+12/03 10:24:06 EasyPHP EasyPHP Servers starting
+12/03 10:24:07 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+12/03 10:24:07 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+12/03 10:24:12 EasyPHP EasyPHP Check version
+12/03 19:32:17 EasyPHP EasyPHP Stop the servers
+12/03 19:32:17 EasyPHP Apache stop event: ap12972_shutdown
+12/03 19:32:18 EasyPHP MySqlSutdown event = MySQLShutdown15860
+12/03 19:32:18 EasyPHP End EasyPHP...
+12/03 20:39:38 EasyPHP EasyPHP Servers starting
+12/03 20:39:39 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+12/03 20:39:39 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+12/03 20:39:44 EasyPHP EasyPHP Check version
+12/03 22:45:42 EasyPHP EasyPHP Stop the servers
+12/03 22:45:42 EasyPHP Apache stop event: ap14380_shutdown
+12/03 22:45:43 EasyPHP MySqlSutdown event = MySQLShutdown23808
+12/03 22:45:43 EasyPHP End EasyPHP...
+13/03 09:17:42 EasyPHP EasyPHP Servers starting
+13/03 09:17:45 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+13/03 09:17:45 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+13/03 09:17:50 EasyPHP EasyPHP Check version
+13/03 10:36:43 EasyPHP Apache stop event: ap21496_shutdown
+13/03 10:36:45 EasyPHP MySqlSutdown event = MySQLShutdown24900
+13/03 10:36:46 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 21496) error 5
+13/03 10:36:49 EasyPHP ServerBase::TimerProc : GetProcessVersion MySQL (pid: 24900) error 5
+13/03 10:36:50 EasyPHP EasyPHP Stop the servers
+13/03 10:36:50 EasyPHP End EasyPHP...
+13/03 16:49:56 EasyPHP EasyPHP Servers starting
+13/03 16:49:57 EasyPHP Apache CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\apache\bin\eds-httpd.exe"
+13/03 16:49:57 EasyPHP CreateProcess "G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\bin\eds-mysqld.exe --defaults-file="G:\Projects\University\5COM\CSDE\GP3\binaries\mysql\my.ini" --language=english"
+13/03 16:50:02 EasyPHP EasyPHP Check version
+13/03 17:59:07 EasyPHP EasyPHP Stop the servers
+13/03 17:59:07 EasyPHP Apache stop event: ap16948_shutdown
+13/03 17:59:08 EasyPHP MySqlSutdown event = MySQLShutdown24696
+13/03 17:59:08 EasyPHP End EasyPHP...

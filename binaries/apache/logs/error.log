@@ -316,11 +316,122 @@
 [Sun Oct 01 19:13:23.755641 2017] [mpm_winnt:notice] [pid 6388:tid 664] AH00422: Parent: Received shutdown signal -- Shutting down the server.
 [Sun Oct 01 19:13:25.757053 2017] [mpm_winnt:notice] [pid 10040:tid 4] AH00364: Child: All worker threads have exited.
 [Sun Oct 01 19:13:25.797854 2017] [mpm_winnt:notice] [pid 6388:tid 664] AH00430: Parent: Child process 10040 exited successfully.
-[Sat Feb 26 12:05:53.938126 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
-[Sat Feb 26 12:05:53.938126 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
-[Sat Feb 26 12:05:53.938126 2022] [core:notice] [pid 8924:tid 620] AH00094: Command line: 'C:\\Users\\charlie\\DOWNLO~1\\EASYPH~1\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/charlie/Downloads/EasyPHP_v2/EasyPHP_v2/binaries/apache'
-[Sat Feb 26 12:05:53.938126 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00418: Parent: Created child process 3372
-[Sat Feb 26 12:05:55.842483 2022] [mpm_winnt:notice] [pid 3372:tid 632] AH00354: Child: Starting 64 worker threads.
-[Sat Feb 26 12:24:22.605502 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Sat Feb 26 12:24:27.917973 2022] [mpm_winnt:notice] [pid 3372:tid 632] AH00364: Child: All worker threads have exited.
-[Sat Feb 26 12:24:28.414115 2022] [mpm_winnt:notice] [pid 8924:tid 620] AH00430: Parent: Child process 3372 exited successfully.
+Failed loading C:/Users/Helz/Desktop/EasyPHP_v2\binaries\php\php_runningversion\php_xdebug-2.2.3-5.5-vc11.dll
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_bz2.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_curl.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_gd2.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mbstring.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mysql.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mysqli.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_pdo_mysql.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_pdo_sqlite.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_sockets.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_sqlite3.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_xsl.dll' - The specified module could not be found.\r\n in Unknown on line 0
+[Fri Mar 11 10:18:31.055094 2022] [mpm_winnt:notice] [pid 18088:tid 632] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 10:18:31.055590 2022] [mpm_winnt:notice] [pid 18088:tid 632] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 10:18:31.055590 2022] [core:notice] [pid 18088:tid 632] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 10:18:31.058566 2022] [mpm_winnt:notice] [pid 18088:tid 632] AH00418: Parent: Created child process 7064
+Failed loading C:/Users/Helz/Desktop/EasyPHP_v2\binaries\php\php_runningversion\php_xdebug-2.2.3-5.5-vc11.dll
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_bz2.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_curl.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_gd2.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mbstring.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mysql.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_mysqli.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_pdo_mysql.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_pdo_sqlite.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_sockets.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_sqlite3.dll' - The specified module could not be found.\r\n in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'C:/Users/Helz/Desktop/EasyPHP_v2\\binaries\\php\\php_runningversion\\ext\\php_xsl.dll' - The specified module could not be found.\r\n in Unknown on line 0
+[Fri Mar 11 10:18:36.090884 2022] [mpm_winnt:notice] [pid 7064:tid 640] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 10:18:41.894061 2022] [mpm_winnt:notice] [pid 18088:tid 632] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Mar 11 10:18:43.895445 2022] [mpm_winnt:notice] [pid 7064:tid 640] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 10:18:43.912169 2022] [mpm_winnt:notice] [pid 18088:tid 632] AH00430: Parent: Child process 7064 exited successfully.
+[Fri Mar 11 10:19:42.677108 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 10:19:42.677108 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 10:19:42.677108 2022] [core:notice] [pid 1508:tid 668] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 10:19:42.680579 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00418: Parent: Created child process 9764
+[Fri Mar 11 10:19:43.203062 2022] [mpm_winnt:notice] [pid 9764:tid 644] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 10:58:55.223793 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00424: Parent: Received restart signal -- Restarting the server.
+[Fri Mar 11 10:58:55.301993 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 10:58:55.301993 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 10:58:55.301993 2022] [core:notice] [pid 1508:tid 668] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 10:58:55.310425 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00418: Parent: Created child process 18540
+[Fri Mar 11 10:58:56.224245 2022] [mpm_winnt:notice] [pid 18540:tid 612] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 10:58:57.224953 2022] [mpm_winnt:notice] [pid 9764:tid 644] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 11:03:11.801795 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Mar 11 11:03:13.803633 2022] [mpm_winnt:notice] [pid 18540:tid 612] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 11:03:13.825491 2022] [mpm_winnt:notice] [pid 1508:tid 668] AH00430: Parent: Child process 18540 exited successfully.
+[Fri Mar 11 13:45:49.571401 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 13:45:49.578841 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 13:45:49.578841 2022] [core:notice] [pid 352:tid 632] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 13:45:49.582313 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00418: Parent: Created child process 11428
+[Fri Mar 11 13:45:50.096169 2022] [mpm_winnt:notice] [pid 11428:tid 656] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 14:30:53.138547 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00424: Parent: Received restart signal -- Restarting the server.
+[Fri Mar 11 14:30:53.226043 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 14:30:53.226539 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 14:30:53.226539 2022] [core:notice] [pid 352:tid 632] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 14:30:53.234971 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00418: Parent: Created child process 1116
+[Fri Mar 11 14:30:54.139020 2022] [mpm_winnt:notice] [pid 1116:tid 648] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 14:30:55.139211 2022] [mpm_winnt:notice] [pid 11428:tid 656] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 14:30:57.898892 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00424: Parent: Received restart signal -- Restarting the server.
+[Fri Mar 11 14:30:57.962003 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 14:30:57.962003 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 14:30:57.962003 2022] [core:notice] [pid 352:tid 632] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 14:30:57.964979 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00418: Parent: Created child process 3132
+[Fri Mar 11 14:30:58.900109 2022] [mpm_winnt:notice] [pid 3132:tid 676] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 14:30:59.900558 2022] [mpm_winnt:notice] [pid 1116:tid 648] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 14:31:00.548186 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Mar 11 14:31:02.549663 2022] [mpm_winnt:notice] [pid 3132:tid 676] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 14:31:02.566910 2022] [mpm_winnt:notice] [pid 352:tid 632] AH00430: Parent: Child process 3132 exited successfully.
+[Fri Mar 11 14:31:06.309841 2022] [mpm_winnt:notice] [pid 11376:tid 592] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 14:31:06.309841 2022] [mpm_winnt:notice] [pid 11376:tid 592] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 14:31:06.309841 2022] [core:notice] [pid 11376:tid 592] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 14:31:06.312818 2022] [mpm_winnt:notice] [pid 11376:tid 592] AH00418: Parent: Created child process 8108
+[Fri Mar 11 14:31:06.702259 2022] [mpm_winnt:notice] [pid 8108:tid 648] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 14:33:35.484227 2022] [mpm_winnt:notice] [pid 11376:tid 592] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Mar 11 14:33:37.484597 2022] [mpm_winnt:notice] [pid 8108:tid 648] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 14:33:37.505190 2022] [mpm_winnt:notice] [pid 11376:tid 592] AH00430: Parent: Child process 8108 exited successfully.
+[Fri Mar 11 14:33:39.913361 2022] [mpm_winnt:notice] [pid 1228:tid 640] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Fri Mar 11 14:33:39.913361 2022] [mpm_winnt:notice] [pid 1228:tid 640] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Fri Mar 11 14:33:39.913361 2022] [core:notice] [pid 1228:tid 640] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Fri Mar 11 14:33:39.916337 2022] [mpm_winnt:notice] [pid 1228:tid 640] AH00418: Parent: Created child process 14812
+[Fri Mar 11 14:33:40.388314 2022] [mpm_winnt:notice] [pid 14812:tid 648] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 11 15:05:24.732412 2022] [mpm_winnt:notice] [pid 1228:tid 640] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Mar 11 15:05:26.733079 2022] [mpm_winnt:notice] [pid 14812:tid 648] AH00364: Child: All worker threads have exited.
+[Fri Mar 11 15:05:26.752039 2022] [mpm_winnt:notice] [pid 1228:tid 640] AH00430: Parent: Child process 14812 exited successfully.
+[Sat Mar 12 10:24:07.783673 2022] [mpm_winnt:notice] [pid 12972:tid 568] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Sat Mar 12 10:24:07.796073 2022] [mpm_winnt:notice] [pid 12972:tid 568] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Sat Mar 12 10:24:07.796073 2022] [core:notice] [pid 12972:tid 568] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Sat Mar 12 10:24:07.799049 2022] [mpm_winnt:notice] [pid 12972:tid 568] AH00418: Parent: Created child process 13280
+[Sat Mar 12 10:24:08.205934 2022] [mpm_winnt:notice] [pid 13280:tid 652] AH00354: Child: Starting 64 worker threads.
+[Sat Mar 12 11:53:42.237831 2022] [:error] [pid 13280:tid 1128] [client 127.0.0.1:55552] PHP Parse error:  syntax error, unexpected 'Total' (T_STRING) in G:\\Projects\\University\\5COM\\CSDE\\GP3\\data\\localweb\\orders\\application\\views\\query2_view.php on line 31, referer: http://127.0.0.1:8080/orders/index.php/main/querynav
+[Sat Mar 12 11:56:46.479054 2022] [:error] [pid 13280:tid 1128] [client 127.0.0.1:51507] PHP Parse error:  syntax error, unexpected 'fmL99G999' (T_STRING) in G:\\Projects\\University\\5COM\\CSDE\\GP3\\data\\localweb\\orders\\application\\views\\query2_view.php on line 31, referer: http://127.0.0.1:8080/orders/index.php/main/querynav
+[Sat Mar 12 19:32:17.423353 2022] [mpm_winnt:notice] [pid 12972:tid 568] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sat Mar 12 19:32:19.424857 2022] [mpm_winnt:notice] [pid 13280:tid 652] AH00364: Child: All worker threads have exited.
+[Sat Mar 12 19:32:19.491363 2022] [mpm_winnt:notice] [pid 12972:tid 568] AH00430: Parent: Child process 13280 exited successfully.
+[Sat Mar 12 20:39:40.158406 2022] [mpm_winnt:notice] [pid 14380:tid 660] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Sat Mar 12 20:39:40.158406 2022] [mpm_winnt:notice] [pid 14380:tid 660] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Sat Mar 12 20:39:40.158406 2022] [core:notice] [pid 14380:tid 660] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Sat Mar 12 20:39:40.196598 2022] [mpm_winnt:notice] [pid 14380:tid 660] AH00418: Parent: Created child process 1068
+[Sat Mar 12 20:39:40.705494 2022] [mpm_winnt:notice] [pid 1068:tid 4] AH00354: Child: Starting 64 worker threads.
+[Sat Mar 12 22:45:42.981935 2022] [mpm_winnt:notice] [pid 14380:tid 660] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sat Mar 12 22:45:44.984286 2022] [mpm_winnt:notice] [pid 1068:tid 4] AH00364: Child: All worker threads have exited.
+[Sat Mar 12 22:45:45.136061 2022] [mpm_winnt:notice] [pid 14380:tid 660] AH00430: Parent: Child process 1068 exited successfully.
+[Sun Mar 13 09:17:47.547879 2022] [mpm_winnt:notice] [pid 21496:tid 676] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Sun Mar 13 09:17:47.547879 2022] [mpm_winnt:notice] [pid 21496:tid 676] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Sun Mar 13 09:17:47.547879 2022] [core:notice] [pid 21496:tid 676] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Sun Mar 13 09:17:47.552838 2022] [mpm_winnt:notice] [pid 21496:tid 676] AH00418: Parent: Created child process 22404
+[Sun Mar 13 09:17:47.996775 2022] [mpm_winnt:notice] [pid 22404:tid 688] AH00354: Child: Starting 64 worker threads.
+[Sun Mar 13 10:36:43.864674 2022] [mpm_winnt:notice] [pid 21496:tid 676] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Mar 13 10:36:45.865563 2022] [mpm_winnt:notice] [pid 22404:tid 688] AH00364: Child: All worker threads have exited.
+[Sun Mar 13 10:36:45.887923 2022] [mpm_winnt:notice] [pid 21496:tid 676] AH00430: Parent: Child process 22404 exited successfully.
+[Sun Mar 13 16:49:58.113428 2022] [mpm_winnt:notice] [pid 16948:tid 640] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Sun Mar 13 16:49:58.113428 2022] [mpm_winnt:notice] [pid 16948:tid 640] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Sun Mar 13 16:49:58.113428 2022] [core:notice] [pid 16948:tid 640] AH00094: Command line: 'G:\\Projects\\University\\5COM\\CSDE\\GP3\\binaries\\apache\\bin\\eds-httpd.exe -d G:/Projects/University/5COM/CSDE/GP3/binaries/apache'
+[Sun Mar 13 16:49:58.148644 2022] [mpm_winnt:notice] [pid 16948:tid 640] AH00418: Parent: Created child process 9996
+[Sun Mar 13 16:49:58.768214 2022] [mpm_winnt:notice] [pid 9996:tid 664] AH00354: Child: Starting 64 worker threads.
+[Sun Mar 13 17:59:07.482172 2022] [mpm_winnt:notice] [pid 16948:tid 640] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Mar 13 17:59:09.484054 2022] [mpm_winnt:notice] [pid 9996:tid 664] AH00364: Child: All worker threads have exited.
+[Sun Mar 13 17:59:09.549430 2022] [mpm_winnt:notice] [pid 16948:tid 640] AH00430: Parent: Child process 9996 exited successfully.

@@ -13,8 +13,8 @@
 		th { color: #562c56; font-family: 'Open Sans', sans-serif; font-size: 1em; background: hsl(220, 12%, 95%);}		
 		
 		button { font-family: 'Open Sans', sans-serif; font-size: 0.9em; border: 0px solid; padding: 5px 10px 5px; border-radius: 6px; transition-duration: 0.2s;}
-		button:hover { background: purple; color: white; transition-duration: 0.1s; cursor: pointer;}	
-		
+		button:hover { background: purple; color: white; transition-duration: 0.1s; cursor: pointer;}
+	
 		/* (Task 3.4) Alex: Added tooltip CSS to hide the tooltip text (use .tooltiptext class to use tooltips) */
 		.tooltip {
     		display:inline-block;
@@ -45,7 +45,7 @@
 		.tooltip:hover .bottom {
     		visibility:visible; opacity:1;
 		}
-		/* END OF TASK 3.4 */	
+		/* END OF TASK 3.4 */
 
 		/* Grid styling for "?" next to Header2. */
 		.Header__Grid { display: grid; grid-template-columns: auto auto; justify-items: center; justify-content: center; }
@@ -59,7 +59,7 @@
 
 <h1>Queries</h1>
 <div align='center'>
-	<p class="p-centre">
+    <p class="p-centre">
 		Here you can view pre-defined queries regarding profits and earnings.
 	</p>
 	<button type="submit" onclick="location.href='<?php echo site_url('main/query1')?>'">Profits From Films</button>
@@ -68,10 +68,10 @@
 </div>
 <div class="Header__Grid">
 	<div class="Header__Text">
-		<h2>Profits From Films</h2>
+		<h2>Profits From Performances</h2>
 	</div>
 	<div class="Header__Tooltip">
-		<a class="tooltip">?<span class="bottom">This Query totals the profits for each film there are bookings present for.</span></a>
+		<a class="tooltip">?<span class="bottom">This Query takes the data from Bookings to generate a report on the profits of each performance.</span></a>
 	</div>
 </div>
 <div align='center'>
@@ -81,7 +81,7 @@
 	
 	$this->db->query('drop table if exists temp');
 	$this->db->query('create temporary table temp as 
-	(select f.id AS "Film ID", f.title AS "Film Title", CONCAT("£", ROUND(s.price/100*b.seats, 2)) AS "Total Profits" 
+	(select f.id, f.title, CONCAT("£", ROUND(s.price/100*b.seats, 2)) AS "Total Profits" 
 	FROM booking b 
 	JOIN performance p ON (b.performance = p.id) 
 	JOIN screen s ON (p.screen = s.screen) 

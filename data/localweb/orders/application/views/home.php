@@ -3,37 +3,69 @@
 <head>
 	<meta charset="utf-8" />
 	<style>
-		h1 { text-align: center; 	font-family: Calibri; }
-		p.p-centre { text-align: center; font-family: Arial; }
-		#nav { font-family: Arial; font-size: 14px; width: 100%; float: center; margin: 0 0 1em 0; padding: 0; list-style: none;}
+		/* CSS provided with the example (slightly edited) */
+		h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; font-weight: 500;}
+		p.p-centre { text-align: center; font-size: 1em; font-family: 'Open Sans', sans-serif; }
+		#nav { width: 100%; float: center; margin: 0 0 1em 0; padding: 0; list-style: none;}
 		#cogs { display: block; padding-top: 20px; margin-left: auto; margin-right: auto; }
 		
-		/* Alex: Added tooltip CSS to hide the tooltip text (use .tooltiptext class to use tooltips) */
-		.tooltip { position: relative; display: inline-block; border-bottom: 1px dotted black; }
-		.tooltip .tooltiptext { visibility: hidden; width: 120px; background-color: #555; color: #fff; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s; }
-  
-		/* Tooltip arrow */
-		.tooltip .tooltiptext::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #555 transparent transparent transparent; }
-  
-		/* Show the tooltip text when you mouse over the tooltip container */
-		.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }	
+		/* (Task 3.4) Alex: Added tooltip CSS to hide the tooltip text (use .tooltiptext class to use tooltips) */
+		.tooltip {
+    		display:inline-block;
+    		position:relative;
+    		text-align:left;
+			border-bottom: 1px dotted purple;
+			cursor: default;
+		}
+
+		.tooltip .bottom {
+    		min-width:200px; 
+    		top:35px;
+    		left:50%;
+    		transform:translate(-50%, 0);
+    		padding:10px 20px;
+    		color:#444444;
+    		background-color:#EEEEEE;
+    		font-size: 0.75em;
+    		border-radius:8px;
+    		position:absolute;
+    		z-index:1;
+    		box-sizing:border-box;
+    		box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);
+    		visibility:hidden; opacity:0; transition:opacity 0.3s;
+		}
+
+		.tooltip:hover .bottom {
+    		visibility:visible; opacity:1;
+		}
+		/* END OF TASK 3.4 */
+
+		/* two-tone div for styling */
+		.footer__container {
+			background: hsl(0, 0%, 97%);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding: 10px 0 0 0;
+		}
 	</style>
+	<title>Home</title>
 </head>
 <body>
 
-<h1>Mice Cinemas</h1>
 
-<p class="p-centre">
-	Are you a <a class="tooltip">member<span class="tooltiptext">Members can access bookings they've made.</span></a> or the <a class="tooltip">director<span class="tooltiptext">The director can access more than the user.</span></a>? 
-</p>
- <ul id="nav">
- <li> <a href='<?php echo site_url('')?>'>Member</a></li>
- <li> <a href='<?php echo site_url('')?>'>Director</a></li>
- </ul>
+<main>
+	<h1>MICE Cinemas</h1>
 
+	<p class="p-centre">
+		Are you a <a class="tooltip">member<span class="bottom">As a Member, you can access bookings you've made.</span></a> or the <a class="tooltip">director<span class="bottom">The director has permissions to access admin related content.</span></a>? 
+	</p>
 
+	<ul id="nav">
+ 		<li> <a href='<?php echo site_url('')?>'>Member</a></li>
+		<li> <a href='<?php echo site_url('')?>'>Director</a></li>
+	</ul>
+</main>
 
-
-</div>
 </body>
 </html>
