@@ -15,10 +15,10 @@ $this->table->set_template(array());
     } else{
             // Set parameters
             $param_username = trim($_POST["username"]);
-	
+    
 // Prepare a select statement
         $sql = "SELECT id FROM member WHERE name = ?";
-	$query = $this->db->query($sql, [$param_username]);
+    $query = $this->db->query($sql, [$param_username]);
                 if($query->num_rows() != 0){
                     $username_err = "This username is already taken.";
                 } else{
@@ -59,9 +59,8 @@ $this->table->set_template(array());
             $param_name = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
-	$query2 = $this->db->query($sql, [$param_title, $param_name, $param_password]);
-	
-
+    $query2 = $this->db->query($sql, [$param_title, $param_name, $param_password]);
+    
                 // Redirect to login page
                 header("location: login?x=".$param_password);
  //           } else{
@@ -79,13 +78,17 @@ $this->table->set_template(array());
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        body { font: 1em sans-serif; margin: 8px;}
+        h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; margin-bottom: 25px;}
+        .wrapper{ width: 360px; margin: auto; margin-top: 21px; padding: 20px; }
+        .btn-primary {  padding: 4px 15px; background-color: purple; border: 0px; border-radius: 6px;}
+        .btn-secondary { padding: 4px 15px; border-radius: 6px; background: #f2f2f2; color: black; border: 0px;}
+        .btn-primary:hover { background-color: black; color: white; }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h2>Sign Up</h2>
+        <h1>Sign Up</h1>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
