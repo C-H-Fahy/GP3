@@ -24,10 +24,9 @@
 </head>
 <body>
     <div>
-        <?php 
+        <?php
         session_start();
-
-        if($_SESSION && $_SESSION["loggedin"] === true){
+        if($_SESSION && $_SESSION["loggedin"] === 1){
             echo "<ul class='nav'><li><a class='button' href='" . site_url('') . "'>Home</a></li>" 
                 . "<li><a class='button' href='" . site_url('main/cinema') . "'>Cinemas</a></li>"
                 . "<li><a class='button' href='" . site_url('main/screen') . "'>Screens</a></li>"
@@ -37,7 +36,7 @@
                 . "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
                 . "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>"
                 // Logout Function (Incomplete)
-                . "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>" . $_SESSION["loggedin"] = false;
+                . "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>";
         }else{
 
         }
