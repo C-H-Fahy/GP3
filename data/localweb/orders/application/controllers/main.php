@@ -64,38 +64,52 @@ class Main extends CI_Controller {
 		$crud->set_table('screen');
 		$crud->set_subject('screen');
 		
-		
+		$crud->callback_column('price', array($this, 'toprice'));	
 		$crud->required_fields('cinema', 'screen_no.', 'seats');
-		
+		$crud->set_relation('cinema','Cinema','name');
 		
 		
 		$output = $crud->render();
 		$this->screen_output($output);
 	}
-	
+	function toprice($value, $row)
+	{
+		return ('&pound;'.($value/100));
+	}
 	public function performance()
-	{	
+	{
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
 		$crud->set_theme('datatables');
-		
 		$crud->set_table('performance');
-		$crud->set_subject('performance');
-		$crud->required_fields('cinema', 'screen_no.', 'seats left');
-		
-		
-		
-		
-		$output = $crud->render();
-		$this->performance_output($output);
-	}
-	
+		$crud->set_subject('Performances');
+		$crud->basic_model->set_query(
+			'SELECT Performance.*, Cinema.name as cinema_name, film.title as film_title, Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
+			FROM Booking
+			RIGHT JOIN Performance
+			ON (Performance.id = booking.performance)
+			JOIN Screen
+			ON ((Performance.screen = Screen.screen) AND (Performance.cinema = Screen.Cinema))
+			JOIN Film
+			ON (Performance.film = film.id)
+			JOIN Cinema
+			ON (Performance.cinema = cinema.id)
+			GROUP BY performance.id
+			')
+		;
+        $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
+        $output = $crud->render();
+        $this->screen_output($output);
+    }
 	function performance_output($output = null)
 	{
 		$this->load->view('performance_view.php', $output);
+
 	}
 	
 	function screen_output($output = null)
+
 	{
 		$this->load->view('screen_view.php', $output);
 	}
@@ -104,6 +118,7 @@ class Main extends CI_Controller {
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
 		$crud->set_theme('datatables');
+
 		$crud->set_table('film');
 		$crud->set_subject('film');
 		
@@ -119,28 +134,27 @@ class Main extends CI_Controller {
 		$this->film_output($output);
 	}
 	
-		public function booking()
-	{	
+	public function booking()
+	{
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
 		$crud->set_theme('datatables');
 		$crud->set_table('booking');
-		$crud->set_subject('booking');
-		$crud->set_relation('id','performance','id');
-		$crud->set_relation('member','member','id');
-		
-		$crud->required_fields('id');
-		
-		
-		
-		
-		
+		$crud->set_subject('Booking');
+		$crud->basic_model->set_query(
+		'SELECT Booking.*, Film.title AS Film_title
+		FROM Booking
+		JOIN Performance
+		ON (Booking.performance = Performance.id)
+		JOIN Film
+		ON (Performance.film = Film.id)
+		');
 
-		
-		$output = $crud->render();
-		$this->booking_output($output);
-	}
-	
+        	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
+        	$output = $crud->render();
+        	$this->screen_output($output);
+    	}
 	function booking_output($output = null)
 	{
 		$this->load->view('booking_view.php', $output);
