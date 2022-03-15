@@ -60,7 +60,8 @@
 
     <p class="p-centre">You are <?php 
 
-        if($_SESSION && $_SESSION["loggedin"]){
+        //echo implode(',', $_SESSION);
+        if($_SESSION && $_SESSION["loggedin"] === 1){
             echo " a " . $_SESSION["role"] . ".";
         }else{
             echo " not logged in.";
@@ -70,7 +71,7 @@
     <p class="p-centre">
     <?php 
         if($_SESSION && $_SESSION["loggedin"]){
-
+            echo "<ul class='nav'><li><a class='button' href='" . site_url('main/login') . "'>Signout</a></li>";
         }else{
             echo "<ul class='nav'><li><a class='button' href='" . site_url('main/login') . "'>Login</a></li>" . "<li><a class='button' href='" . site_url('main/register') . "'>Register</a></li>";
         }
