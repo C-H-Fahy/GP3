@@ -153,7 +153,7 @@ class Main extends CI_Controller {
 
         	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
         	$output = $crud->render();
-        	$this->screen_output($output);
+        	$this->booking_output($output);
     	}
 	function booking_output($output = null)
 	{
