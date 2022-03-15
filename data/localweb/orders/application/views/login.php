@@ -3,7 +3,7 @@
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === 1){
     session_destroy();
 }
  
@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Set parameters
         $param_username = $username;
 
-  	$query = $this->db->query($sql, [$param_username]);                
+      $query = $this->db->query($sql, [$param_username]);                
                 // Check if username exists, if yes then verify password
                 if($query->num_rows() == 1){                    
                     // Bind result variables
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             session_start();
                             
                             // Store data in session variables
-                            $_SESSION["loggedin"] = true;
+                            $_SESSION["loggedin"] = 1;
                             $_SESSION["id"] = $id;
                             $_SESSION["name"] = $name;                            
                             $_SESSION["role"] = $role_type;
@@ -78,13 +78,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        body { font: 1em sans-serif; margin: 8px;}
+        h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; margin-bottom: 25px;}
+        .wrapper{ width: 360px; margin: auto; margin-top: 21px; padding: 20px; }
+        .btn-primary {  padding: 4px 15px; background-color: purple; border: 0px; border-radius: 6px;}
+        .btn-secondary { padding: 4px 15px; border-radius: 6px; background: #f2f2f2; color: black; border: 0px;}
+        .btn-primary:hover { background-color: black; color: white; }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h2>Login</h2>
+        <h1>Login</h1>
         <p>Please fill in your credentials to login.</p>
 
         <?php 
