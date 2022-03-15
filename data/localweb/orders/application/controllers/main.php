@@ -100,7 +100,7 @@ class Main extends CI_Controller {
 		;
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
         $output = $crud->render();
-        $this->screen_output($output);
+        $this->performance_output($output);
     }
 	function performance_output($output = null)
 	{
@@ -153,7 +153,7 @@ class Main extends CI_Controller {
 
         	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
         	$output = $crud->render();
-        	$this->screen_output($output);
+        	$this->booking_output($output);
     	}
 	function booking_output($output = null)
 	{
@@ -192,6 +192,15 @@ class Main extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('querynav_view');
 	}
+
+public function register()
+	{	
+		$this->load->view('register');
+	}
+public function login()
+	{	
+		$this->load->view('login');
+	}
 		
 	public function query1()
 	{	
@@ -205,6 +214,12 @@ class Main extends CI_Controller {
 		$this->load->view('query2_view');
 	}
 	
+	public function query3()
+	{
+		$this->load->view('header');
+		$this->load->view('query2_view');
+	}
+
 	public function blank()
 	{	
 		$this->load->view('header');

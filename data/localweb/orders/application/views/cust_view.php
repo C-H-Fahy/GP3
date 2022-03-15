@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<style>
-		h1 { text-align: center; 	font-family: Calibri; }
+		h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; font-weight: 500;}
 	</style>
 <?php 
 foreach($css_files as $file): ?>
