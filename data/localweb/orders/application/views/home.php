@@ -54,13 +54,10 @@
 </head>
 <body>
 
-
 <main>
     <h1>MICE Cinemas</h1>
 
     <p class="p-centre">You are <?php 
-
-        //echo implode(',', $_SESSION);
         if($_SESSION && $_SESSION["loggedin"] === 1){
             echo " a " . $_SESSION["role"] . ".";
         }else{

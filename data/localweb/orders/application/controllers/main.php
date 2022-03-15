@@ -181,12 +181,10 @@ class Main extends CI_Controller {
 
 public function register()
 	{	
-		//$this->load->view('header');
 		$this->load->view('register');
 	}
 public function login()
 	{	
-		//$this->load->view('header');
 		$this->load->view('login');
 	}
 		
