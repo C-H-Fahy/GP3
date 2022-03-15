@@ -37,8 +37,6 @@
                 . "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>"
                 // Logout Function (Incomplete)
                 . "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>";
-        }else{
-
         }
         ?>
     </div>

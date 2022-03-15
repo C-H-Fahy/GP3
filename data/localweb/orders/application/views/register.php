@@ -61,7 +61,6 @@ $this->table->set_template(array());
 
     $query2 = $this->db->query($sql, [$param_title, $param_name, $param_password]);
     
-
                 // Redirect to login page
                 header("location: login?x=".$param_password);
  //           } else{
