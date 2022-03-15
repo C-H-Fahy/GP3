@@ -100,7 +100,7 @@ class Main extends CI_Controller {
 		;
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
         $output = $crud->render();
-        $this->screen_output($output);
+        $this->performance_output($output);
     }
 	function performance_output($output = null)
 	{
