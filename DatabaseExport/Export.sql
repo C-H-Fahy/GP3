@@ -1,9 +1,10 @@
+
 -- phpMyAdmin SQL Dump
 -- version 4.1.4
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 05:29 PM
+-- Generation Time: Mar 17, 2022 at 07:00 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -59,7 +60,8 @@ CREATE TABLE IF NOT EXISTS `cinema` (
   `location` char(255) DEFAULT NULL,
   `address` text,
   `manager` char(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
@@ -83,7 +85,8 @@ CREATE TABLE IF NOT EXISTS `film` (
   `released` int(11) DEFAULT NULL,
   `title` char(255) NOT NULL,
   `director` char(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `titledirector` (`title`,`director`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
@@ -120,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `password` char(100) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3335 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3334 ;
 
 --
 -- Dumping data for table `member`
@@ -206,3 +209,4 @@ INSERT INTO `screen` (`cinema`, `screen`, `seats`, `price`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
