@@ -32,9 +32,9 @@ INSERT INTO Member
 ;
 
 INSERT INTO Member
-		(name, joined, active, role_type, password)
+		(id, name, joined, active, role_type, password)
 	VALUES
-		('admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW')
+		(1, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW')
 ;
 	
 INSERT INTO Film
