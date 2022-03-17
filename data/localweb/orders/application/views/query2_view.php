@@ -82,7 +82,7 @@
 	
 	$this->db->query('drop table if exists temp');
 	$this->db->query('create temporary table temp as 
-	(select b.id AS "Booking ID", b.seats AS "Number of Seats", CONCAT("£", ROUND(s.price/100*b.seats, 2)) AS "Total Profits" 
+	(select b.id AS "Booking ID", b.seats AS "Number of Seats", CONCAT("£", ROUND(s.price/100*b.seats, 2)) AS "Booking Profits" 
 	FROM booking b 
 	JOIN performance p ON (b.performance = p.id) 
 	JOIN screen s ON (p.screen = s.screen) 
