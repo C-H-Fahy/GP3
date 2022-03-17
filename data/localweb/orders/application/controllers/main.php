@@ -174,7 +174,8 @@ class Main extends CI_Controller {
 		$crud->set_subject('member');
 		
 		
-		
+	
+        	$crud->columns(['ID', 'title', 'name', 'joined', 'active']);
 		$crud->required_fields('title', 'name', 'status');
 		
 		
