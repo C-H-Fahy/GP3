@@ -1,7 +1,7 @@
 use orders;
 CREATE TABLE Cinema(
     id int AUTO_INCREMENT,    
-    name char(255) NOT NULL, 
+    name char(255) NOT NULL UNIQUE,
     location char(255), 
     address text(511), 
     manager char(255),
@@ -22,6 +22,9 @@ CREATE TABLE Film(
     director char(255),
     PRIMARY KEY(id)
     );
+ALTER TABLE Film
+    ADD CONSTRAINT titledirector UNIQUE (title, director);
+
 CREATE TABLE Performance(
     id int AUTO_INCREMENT,
     cinema int NOT NULL,
