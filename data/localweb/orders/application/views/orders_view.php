@@ -5,8 +5,7 @@
 	<style>
 		h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; font-weight: 500;}
 	</style>
-<?php 
-foreach($css_files as $file): ?>
+<?php foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>
 <?php foreach($js_files as $file): ?>
