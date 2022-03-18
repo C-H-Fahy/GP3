@@ -217,7 +217,7 @@ public function login()
 	public function query3()
 	{
 		$this->load->view('header');
-		$this->load->view('query2_view');
+		$this->load->view('query3_view');
 	}
 
 	public function blank()
