@@ -12,8 +12,7 @@
 		table.dataTable {box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);}		
 		p.p-centre { text-align: center; font-size: 1em; font-family: 'Open Sans', sans-serif; }
 	</style>
-<?php 
-foreach($css_files as $file): ?>
+<?php foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>
 <?php foreach($js_files as $file): ?>
@@ -21,13 +20,12 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 </head>
 <body>
-
-<h1>Performances</h1>
-	<p class="p-centre">
-		This table keeps a record of the scheduled Performances at a given Cinema.
-	</p>
-    <div class="Table__Perf">
-		<?php echo $output; ?>
-    </div>
+	<h1>Performances</h1>
+		<p class="p-centre">
+			This table keeps a record of the scheduled Performances at a given Cinema.
+		</p>
+    	<div class="Table__Perf">
+			<?php echo $output; ?>
+    	</div>
 </body>
 </html>
