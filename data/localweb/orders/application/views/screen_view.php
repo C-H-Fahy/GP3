@@ -21,7 +21,12 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 </head>
 <body>
-
+<?php
+if($_SESSION['role'] === 'member'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
 <h1>Screens</h1>
 <p class="p-centre">
 	This table displays the different Screens available at Cinemas stored on the system.
