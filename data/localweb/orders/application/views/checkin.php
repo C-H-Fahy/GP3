@@ -61,7 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $title = $row->title;
                     echo "This showing is valid for <b>".$seats."</b> seats at <b>".$name."</b> for the <b>".$time."</b> showing of <b>".$title."</b>";
         }else{
-            echo "That is not a valid booking ID\nThis attempt has been logged.";
+		$sql = "INSERT INTO entrylogs(date, time) VALUES(NOW(), NOW());";
+         
+        	$query = $this->db->query($sql); 
+            	echo "That is not a valid booking ID<br>This attempt has been logged.";
         }
 
 	echo $button;

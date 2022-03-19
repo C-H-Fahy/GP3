@@ -143,6 +143,22 @@ INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `passwor
 INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
 ('Sir Lord', 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrylogs`
+--
+
+CREATE TABLE entrylogs(
+    id int AUTO_INCREMENT,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    Primary Key(ID),
+    FOREIGN KEY (performance) REFERENCES Performance(ID)
+    );
+
 -- --------------------------------------------------------
 
 --

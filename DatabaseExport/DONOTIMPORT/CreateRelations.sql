@@ -53,3 +53,11 @@ CREATE TABLE Booking(
     FOREIGN KEY (performance) REFERENCES Performance(ID)
     );
 
+CREATE TABLE entrylogs(
+    id int AUTO_INCREMENT,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    Primary Key(ID),
+    FOREIGN KEY (performance) REFERENCES Performance(ID)
+    );
+
