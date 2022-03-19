@@ -137,6 +137,12 @@ INSERT INTO `member` (`title`, `name`, `joined`, `active`, `password`) VALUES
 INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
 ('Ms', 'admin-test', '2017-12-21', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
+INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+('Mr', 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+
+INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+('Sir Lord', 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+
 -- --------------------------------------------------------
 
 --
