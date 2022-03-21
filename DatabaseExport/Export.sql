@@ -4,7 +4,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 07:00 PM
+-- Generation Time: Mar 21, 2022 at 11:22 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -105,7 +105,7 @@ INSERT INTO `film` (`id`, `released`, `title`, `director`) VALUES
 (9, 1946, 'Notorious', 'Alfred Hitchcock'),
 (10, 1948, 'Rope', 'Alfred Hitchcock'),
 (11, 1949, 'African Queen', 'John Huston'),
-(12, NULL, 'Spellbound', NULL);
+(12, 1945, 'Spellbound', 'Alfred Hitchcock');
 
 -- --------------------------------------------------------
 
