@@ -50,12 +50,8 @@ INSERT INTO Film
 		(1948, 'Key Largo', 'John Huston'),
 		(1946, 'Notorious', 'Alfred Hitchcock'),
 		(1948, 'Rope', 'Alfred Hitchcock'),
-		(1949, 'African Queen', 'John Huston')
-;
-INSERT INTO Film
-		(title)
-	VALUES
-		('Spellbound')
+		(1949, 'African Queen', 'John Huston'),
+		(1945, 'Spellbound', 'Alfred Hitchcock')
 ;
 INSERT INTO Performance
 		(cinema, screen, film, date, time)
