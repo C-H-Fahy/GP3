@@ -133,7 +133,7 @@ class Main extends CI_Controller {
     }
 	else{
 		
-	$hi = 0; }
+		}$hi = 0;
 		
 		
 		$crud->basic_model->set_query(
