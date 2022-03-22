@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter Member/User ID.";
+        $username_err = "Please enter Username";
     } else{
         $username = trim($_POST["username"]);
     }
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, name, password, role_type FROM member WHERE id = ?";
+        $sql = "SELECT id, name, password, role_type FROM member WHERE name = ?";
  
         // Set parameters
         $param_username = $username;
