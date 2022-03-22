@@ -236,6 +236,11 @@ public function login()
 		$this->load->view('header');
 		$this->load->view('query3_view');
 	}
+	public function query4()
+	{
+		$this->load->view('header');
+		$this->load->view('query4_view');
+	}
 
 	public function blank()
 	{	
