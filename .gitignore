@@ -3,4 +3,5 @@
 *.ini
 *.log
 *.exe
+*.zip
 binaries/

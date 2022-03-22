@@ -1,9 +1,10 @@
+
 -- phpMyAdmin SQL Dump
 -- version 4.1.4
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2022 at 09:35 PM
+-- Generation Time: Mar 21, 2022 at 11:22 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -27,14 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `booking` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `member` int(11) DEFAULT NULL,
-  `performance` int(11) DEFAULT NULL,
-  `seats` int(11) DEFAULT NULL,
+  `performance` int(11) NOT NULL,
+  `seats` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `member` (`member`),
   KEY `performance` (`performance`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `booking`
@@ -54,13 +55,14 @@ INSERT INTO `booking` (`id`, `member`, `performance`, `seats`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `cinema` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` char(255) NOT NULL,
   `location` char(255) DEFAULT NULL,
   `address` text,
   `manager` char(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `cinema`
@@ -79,12 +81,13 @@ INSERT INTO `cinema` (`id`, `name`, `location`, `address`, `manager`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `film` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `released` int(11) DEFAULT NULL,
   `title` char(255) NOT NULL,
   `director` char(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `titledirector` (`title`,`director`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `film`
@@ -102,40 +105,40 @@ INSERT INTO `film` (`id`, `released`, `title`, `director`) VALUES
 (9, 1946, 'Notorious', 'Alfred Hitchcock'),
 (10, 1948, 'Rope', 'Alfred Hitchcock'),
 (11, 1949, 'African Queen', 'John Huston'),
-(12, NULL, 'Spellbound', NULL);
+(12, 1945, 'Spellbound', 'Alfred Hitchcock');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `member`
 --
+
 CREATE TABLE IF NOT EXISTS `member` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `title` char(15) DEFAULT NULL,
-  `name` char(255) NOT NULL UNIQUE,
+  `name` char(255) NOT NULL,
   `joined` date DEFAULT NULL,
-  `active` char(31) DEFAULT NULL DEFAULT 'Active',
+  `active` char(31) DEFAULT 'Active',
   `role_type` char(16) DEFAULT 'member',
   `password` char(100) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3334 ;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`title`, `name`, `joined`, `active`, `password`) VALUES
-('Ms', 'Helen Miranda', '2017-12-21', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Mr', 'Jose Alves', '2017-12-27', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Dr', 'Guy Redmond', '2018-02-09', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Ms', 'Maria Partou', '2018-03-11', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Ms', 'Lindsay White', '2018-03-16', 'Cancelled', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Mr', 'David Wilkinson', '2018-03-18', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-('Ms', 'Olenka Sama', '2018-12-12', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
-
-INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
-('Ms', 'admin-test', '2017-12-21', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+INSERT INTO `member` (`ID`, `title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+(1111, 'Ms', 'Helen Miranda', '2017-12-21', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1234, 'Mr', 'Jose Alves', '2017-12-27', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1333, 'Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1344, 'Dr', 'Guy Redmond', '2018-02-09', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1444, 'Ms', 'Maria Partou', '2018-03-11', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1, NULL, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
 -- --------------------------------------------------------
 
@@ -144,16 +147,16 @@ INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `passwor
 --
 
 CREATE TABLE IF NOT EXISTS `performance` (
-  `id` int(11) NOT NULL DEFAULT '0',
-  `cinema` int(11) DEFAULT NULL,
-  `screen` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cinema` int(11) NOT NULL,
+  `screen` int(11) NOT NULL,
   `film` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `film` (`film`),
   KEY `cinema` (`cinema`,`screen`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `performance`
@@ -185,8 +188,8 @@ INSERT INTO `performance` (`id`, `cinema`, `screen`, `film`, `date`, `time`) VAL
 CREATE TABLE IF NOT EXISTS `screen` (
   `cinema` int(11) NOT NULL DEFAULT '0',
   `screen` int(11) NOT NULL DEFAULT '0',
-  `seats` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
+  `seats` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   PRIMARY KEY (`cinema`,`screen`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
