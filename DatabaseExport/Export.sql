@@ -144,23 +144,6 @@ INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `passwor
 ('Sir Lord', 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `entrylogs`
---
-
-CREATE TABLE entrylogs(
-    id int AUTO_INCREMENT,
-    date DATE NOT NULL,
-    time TIME NOT NULL,
-    Primary Key(ID),
-    FOREIGN KEY (performance) REFERENCES Performance(ID)
-    );
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `performance`
 --
@@ -176,6 +159,21 @@ CREATE TABLE IF NOT EXISTS `performance` (
   KEY `film` (`film`),
   KEY `cinema` (`cinema`,`screen`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrylogs`
+--
+
+CREATE TABLE entrylogs(
+    id int AUTO_INCREMENT,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    Primary Key(`ID`)
+);
+
+-- --------------------------------------------------------
 
 --
 -- Dumping data for table `performance`
