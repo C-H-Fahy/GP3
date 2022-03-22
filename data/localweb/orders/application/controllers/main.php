@@ -126,10 +126,7 @@ class Main extends CI_Controller {
 		
 		
 		
-		
-		
-
-		
+        	$crud->columns(['id', 'released', 'title', 'director']);
 		$output = $crud->render();
 		$this->film_output($output);
 	}
@@ -191,7 +188,8 @@ class Main extends CI_Controller {
 		$crud->set_subject('member');
 		
 		
-		
+	
+        	$crud->columns(['ID', 'title', 'name', 'joined', 'active']);
 		$crud->required_fields('title', 'name', 'status');
 		
 		
