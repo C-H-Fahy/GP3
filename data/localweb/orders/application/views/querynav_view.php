@@ -26,6 +26,10 @@ if($_SESSION['role'] !== 'manager'){
 	<button type="submit" onclick="location.href='<?php echo site_url('main/query1')?>'">Profits From Films</button>
 	<button type="submit" onclick="location.href='<?php echo site_url('main/query2')?>'">Profits From Bookings</button>
 	<button type="submit" onclick="location.href='<?php echo site_url('main/query3')?>'">Profits From Performances</button>
+	<p class="p-centre">
+		Here you can view system logs.
+	</p>
+	<button type="submit" onclick="location.href='<?php echo site_url('main/query4')?>'">Invalid entry attempts</button>
 </div>
     
 </body>
