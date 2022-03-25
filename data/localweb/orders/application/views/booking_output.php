@@ -15,6 +15,13 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 
+<?php
+if($_SESSION['role'] === 'member'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
+
 <h1>Booking</h1>
     <div>
 		<?php echo $output; ?>

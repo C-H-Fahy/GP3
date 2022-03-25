@@ -156,6 +156,23 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('booking_view.php', $output);
 	}
+
+
+	public function checkin()
+	{
+		$this->load->view('header');
+		//$crud = new grocery_CRUD();
+
+        	$this->checkin_output();
+    	}
+
+	function checkin_output($output = null)
+	{
+		$this->load->view('checkin.php', $output);
+	}
+
+
+
 	
 	function film_output($output = null)
 	{
