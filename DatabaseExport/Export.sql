@@ -140,7 +140,12 @@ INSERT INTO `member` (`ID`, `title`, `name`, `joined`, `active`, `role_type`, `p
 (3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
 (1, NULL, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
--- --------------------------------------------------------
+INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+('Mr', 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+
+INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
+('Sir Lord', 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+
 
 --
 -- Table structure for table `performance`
@@ -157,6 +162,21 @@ CREATE TABLE IF NOT EXISTS `performance` (
   KEY `film` (`film`),
   KEY `cinema` (`cinema`,`screen`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrylogs`
+--
+
+CREATE TABLE entrylogs(
+    id int AUTO_INCREMENT,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    Primary Key(`ID`)
+);
+
+-- --------------------------------------------------------
 
 --
 -- Dumping data for table `performance`
