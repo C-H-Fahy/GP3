@@ -35,10 +35,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       
        if($query->num_rows() == 1){                    
              echo 'valid data, TODO: add to db and forward to booking/view/X';
-
-             $sql = "INSERT INTO booking(seats, performance, member) VALUES(?, ?, ?)";
-             $query2 = $this->db->query($sql, [$seat, $performance, $uid]); 
-	     echo $query2->row();
+             $id = rand();
+             $sql = "INSERT INTO booking(id, seats, performance, member) VALUES(?, ?, ?, ?)";
+             $query2 = $this->db->query($sql, [$id, $seat, $performance, $uid]); 
+	     header("location: booking/read/".$id);
 
        } else{
              // Username doesn't exist, display a generic error message
