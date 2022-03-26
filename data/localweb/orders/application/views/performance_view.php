@@ -43,6 +43,7 @@ actions.each((i)=>{
         const x = link.split(CURRENT_PAGE+'/read/');
         //use a ? like this when adding it back with a name
         btn.attr('href', x[0] + 'createbooking?pid='+x[1]);
+        btn.children().eq(1).html('Book Now');
     }
 
     if(link.includes('edit')){
@@ -51,7 +52,7 @@ actions.each((i)=>{
         //use a ? like this when adding it back with a name
         <?php 
         if($_SESSION['role'] !== 'manager'){
-          echo "btn.attr('href', '');";
+          echo "btn.remove()";
         }else{
           //echo "btn.attr('href', x[0] + 'createbooking?pid='+x[1]);";
         }
@@ -65,7 +66,7 @@ deletebtn.each((i)=>{
     const btn = deletebtn.eq(i);
     <?php
     if($_SESSION['role'] !== 'manager'){
-      echo "btn.attr('onclick', '');";
+      echo "btn.remove()";
     }else{
       echo "";
     }
