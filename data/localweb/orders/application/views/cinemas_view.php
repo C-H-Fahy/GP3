@@ -49,7 +49,7 @@ actions.each((i)=>{
         //use a ? like this when adding it back with a name
         <?php 
         if($_SESSION['role'] !== 'manager'){
-          echo "btn.attr('href', '');";
+           echo "btn.remove()";
         }else{
           //allow default edit
         }
@@ -63,7 +63,7 @@ deletebtn.each((i)=>{
     const btn = deletebtn.eq(i);
     <?php
     if($_SESSION['role'] !== 'manager'){
-      echo "btn.attr('onclick', '');";
+       echo "btn.remove()";
     }else{
       //allow default edit
     }

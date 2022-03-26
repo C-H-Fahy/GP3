@@ -30,7 +30,7 @@ foreach($css_files as $file): ?>
 		<?php echo $output; ?>
     </div>
 <script>
-function delete_row(delete_url , redirect)
+function alter_row(delete_url , redirect)
 {
 	if(confirm('This will delete your booking and allow you to create a new one.'))
 	{
@@ -73,7 +73,7 @@ $('tbody').children().each((i)=>{
         //use a ? like this when adding it back with a name
 
           btn.attr('href', 'javascript: void(0)');
-          btn.attr('onclick', `delete_row('http://localhost:8080/orders/index.php/main/userbooking/delete/${id}', '${x[0]}createbooking?pid=${pid}');`);
+          btn.attr('onclick', `alter_row('http://localhost:8080/orders/index.php/main/userbooking/delete/${id}', '${x[0]}createbooking?pid=${pid}');`);
         
     }
   });
