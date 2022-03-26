@@ -29,5 +29,30 @@ foreach($css_files as $file): ?>
     <div class="Table__Booking">
 		<?php echo $output; ?>
     </div>
+<script>
+$('tbody').children().each((i)=>{
+  const row = $('tbody').children().eq(i).children();
+  const id = row.eq(0).html();
+  const pid = row.eq(2).html();
+  console.log({id, pid});
+
+  row.eq(5).children().each((ii)=>{
+    const link = btn.attr('href');
+    const tmp = window.location.href.split('/');
+    const CURRENT_PAGE = tmp[tmp.length-1];
+
+    if(link.includes('edit')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/edit/');
+        //use a ? like this when adding it back with a name
+
+          echo "btn.attr('href', x[0] + 'createbooking?pid='+pid);";
+        
+    }
+  });
+
+});
+</script>
+
 </body>
 </html>
