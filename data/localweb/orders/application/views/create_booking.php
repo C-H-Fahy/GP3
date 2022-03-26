@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                  $id = rand();
                  $sql = "INSERT INTO booking(id, seats, performance, member) VALUES(?, ?, ?, ?)";
                  $this->db->query($sql, [$id, $seat, $performance, $uid]); 
-	         header("location: booking/read/".$id);
+	         header("location: userbooking/read/".$id);
              } else{
                  $err = "There are not enough seats available for this screening";
              }

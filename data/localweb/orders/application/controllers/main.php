@@ -140,6 +140,33 @@ class Main extends CI_Controller {
 		$this->film_output($output);
 	}
 	
+	public function userbooking()
+	{
+		$this->load->view('header');
+		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
+		$crud->set_theme('datatables');
+		$crud->set_table('booking');
+		$crud->set_subject('Booking');
+		$crud->basic_model->set_query(
+		'SELECT Booking.*, Film.title AS Film_title
+		FROM Booking
+		JOIN Performance
+		ON (Booking.performance = Performance.id)
+		JOIN Film
+		ON (Performance.film = Film.id)
+                WHERE member='.$_SESSION['id']);
+
+        	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
+        	$output = $crud->render();
+        	$this->userbooking_output($output);
+    	}
+	function userbooking_output($output = null)
+	{
+		$this->load->view('user_booking_view.php', $output);
+	}
+
+	
 	public function booking()
 	{
 		$this->load->view('header');
