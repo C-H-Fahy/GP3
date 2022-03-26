@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 4.1.4
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 11:22 PM
+-- Generation Time: Mar 27, 2022 at 01:34 AM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -130,22 +129,17 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`ID`, `title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
-(1111, 'Ms', 'Helen Miranda', '2017-12-21', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(1234, 'Mr', 'Jose Alves', '2017-12-27', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(1333, 'Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(1344, 'Dr', 'Guy Redmond', '2018-02-09', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(1444, 'Ms', 'Maria Partou', '2018-03-11', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', 'member', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
+(1111, 'Ms', 'Helen Miranda', '2017-12-21', 'Active', 'member', '$2y$10$ExSVfcy/cMkG8RAAamP4ke0.hxmBaPwxruE2WG3P33Usg18AUZMGW'),
+(1234, 'Mr', 'Jose Alves', '2017-12-27', 'Active', 'member', '$2y$10$M3oW5tL.MWD2g8ZpvNcdiucn27i2KPFg40PFch.xA4eQs//pBUiqy'),
+(1333, 'Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', 'member', '$2y$10$YoPiRYIY5Yhv/sLdHKfDeu8J.RY4OEQCp7O7.sJvEMZGPk/kSSxdO'),
+(1344, 'Dr', 'Guy Redmond', '2018-02-09', 'Active', 'member', '$2y$10$XJhaWazWEx4xYTjgQn4.2OA.HZu.SxdcZFIfcB0VTsWbqe3C4MMTi'),
+(1444, 'Ms', 'Maria Partou', '2018-03-11', 'Active', 'member', '$2y$10$f59uB2XxTSKGAhXH50hBXu1qx9C/3eWCM/q7HvW9SpGWFLv/Dmohe'),
+(2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', 'member', '$2y$10$Tls7pfUEOVJqlDzuGoeOcuc66AvWRoxbsXSYmxPNYUd3yrGJTS532'),
+(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', 'member', '$2y$10$MbxtBf6xTaCLhz2mcFQ0CeYTmRFGzb4pW.ztUkum6p0J1snGXUFRS'),
+(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', 'member', '$2y$10$uZi.OEtK/d2HpmlSWB2jPewebL0zu2DlQwJmbfwdn7NQwVxPeBZ52'),
 (1, NULL, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
 
-INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
-('Mr', 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
-
-INSERT INTO `member` (`title`, `name`, `joined`, `active`, `role_type`, `password`) VALUES
-('Sir Lord', 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `performance`
@@ -162,21 +156,6 @@ CREATE TABLE IF NOT EXISTS `performance` (
   KEY `film` (`film`),
   KEY `cinema` (`cinema`,`screen`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `entrylogs`
---
-
-CREATE TABLE entrylogs(
-    id int AUTO_INCREMENT,
-    date DATE NOT NULL,
-    time TIME NOT NULL,
-    Primary Key(`ID`)
-);
-
--- --------------------------------------------------------
 
 --
 -- Dumping data for table `performance`
@@ -229,4 +208,3 @@ INSERT INTO `screen` (`cinema`, `screen`, `seats`, `price`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
