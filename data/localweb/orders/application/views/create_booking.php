@@ -1,64 +1,49 @@
 <?php
-// Initialize the session
-session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
 if(!$_SESSION || !isset($_SESSION["loggedin"])){
-    return;
+                            header("location: login");
 }
  
 // Define variables and initialize with empty values
-$seat = $password = "";
-$seat_err = $password_err = $login_err = "";
+$seat = $performance = $uid = "";
+$err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Check if username is empty
-    if(empty(trim($_POST["seats"]))){
-        $seat_err = "Please enter a number of seats.";
-    } else{
-        $seat = trim($_POST["$seats"]);
+    $uid = $_SESSION["id"];
+
+    // Check if seats is empty
+    $seat = trim($_POST["seats"]);
+    if(empty($seat) || !(is_numeric($seat) && (int)$seat > 0)){
+        $err = "Please enter a number of seats.";
+        $seat = '1';
     }
      
+    // Check if seats is empty
+    if(!isset($_GET['pid']) || empty(trim($_GET['pid']))){
+        $err = "Invalid Performance";
+    } else{
+        $performance = trim($_GET['pid']);
+    }
+     
+
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if(empty($err)){
         // Prepare a select statement
-        $sql = "SELECT id, name, password, role_type FROM member WHERE name = ?";
- 
-        // Set parameters
-        $param_username = $username;
+      $sql = "SELECT id FROM performance WHERE id = ?";
 
-      $query = $this->db->query($sql, [$param_username]);                
-                // Check if username exists, if yes then verify password
-                if($query->num_rows() == 1){                    
-                    // Bind result variables
-                    $row = $query->row();
-                    $id = $row->id;
-                    $name = $row->name;
-                    $hashed_password = $row->password;
-                    $role_type = $row->role_type;
+      $query = $this->db->query($sql, [$performance]);                
+      
+       if($query->num_rows() == 1){                    
+             echo 'valid data, TODO: add to db and forward to booking/view/X';
 
-                    if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
-                            session_start();
-                            
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = 1;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["name"] = $name;                            
-                            $_SESSION["role"] = $role_type;
+             $sql = "INSERT INTO booking(seats, performance, member) VALUES(?, ?, ?)";
+             $query2 = $this->db->query($sql, [$seat, $performance, $uid]); 
+	     echo $query2->row();
 
-                            // Redirect user to welcome page
-                            header("location: index");
-                    } else{
-                            // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password..";
-                    }
-                } else{
-                    // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
-                }
+       } else{
+             // Username doesn't exist, display a generic error message
+             $err = "Invalid performance id.";
+       }
 
     }
 }
@@ -82,30 +67,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h1>Create booking</h1>
-        <p>Please fill in your credentials to login.</p>
+        <p>How many seats is this booking for?</p>
 
         <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        if(!empty($err)){
+            echo '<div class="alert alert-danger">' . $err . '</div>';
         }        
         ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?pid=<?php if(isset($_GET['pid'])) echo $_GET['pid'];?>" method="post">
             <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <label>Seats</label>
+                <input type="number" name="seats" class="form-control <?php echo (!empty($err)) ? 'is-invalid' : ''; ?>" value="<?php echo $seat; ?>">
             </div>    
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                <input type="submit" class="btn btn-primary" value="Book">
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <p>Don't have an account? <a href="<?php echo site_url('main/register')?>">Sign up now</a>.</p>
-        </form>
+         </form>
     </div>
 </body>
 </html>
