@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 01:42 AM
+-- Generation Time: Mar 27, 2022 at 03:17 AM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `password` char(100) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3334 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3336 ;
 
 --
 -- Dumping data for table `member`
@@ -150,7 +150,9 @@ INSERT INTO `member` (`ID`, `title`, `name`, `joined`, `active`, `role_type`, `p
 (2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', 'member', '$2y$10$Tls7pfUEOVJqlDzuGoeOcuc66AvWRoxbsXSYmxPNYUd3yrGJTS532'),
 (2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', 'member', '$2y$10$MbxtBf6xTaCLhz2mcFQ0CeYTmRFGzb4pW.ztUkum6p0J1snGXUFRS'),
 (3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', 'member', '$2y$10$uZi.OEtK/d2HpmlSWB2jPewebL0zu2DlQwJmbfwdn7NQwVxPeBZ52'),
-(1, NULL, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW');
+(1, NULL, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$yTI.pu90o0ssPFQAiM7AkuBcGxM/.Zbk4UkMXRJJzr6W8in6fUsDW'),
+(3334, NULL, 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$eF7x2SuwqcFh/SuYSqPtVuwY0gzzA6.LVZxA.N/waCD596eRE6Q4C'),
+(3335, NULL, 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$M5SltbZMN1kYelm6YVOU5Oe.ad40F/RdklIJvznriAk7q/kOLv.9W');
 
 -- --------------------------------------------------------
 
