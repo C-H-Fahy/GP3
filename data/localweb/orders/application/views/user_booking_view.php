@@ -30,6 +30,31 @@ foreach($css_files as $file): ?>
 		<?php echo $output; ?>
     </div>
 <script>
+function delete_row(delete_url , redirect)
+{
+	if(confirm('This will delete your booking and allow you to create a new one.'))
+	{
+		$.ajax({
+			url: delete_url,
+			dataType: 'json',
+			success: function(data)
+			{
+				if(data.success)
+				{
+					window.location.href=redirect;
+
+				}
+				else
+				{
+					error_message(data.error_message);
+				}
+			}
+		});
+	}
+
+	return false;
+}
+
 $('tbody').children().each((i)=>{
   const row = $('tbody').children().eq(i).children();
   const id = row.eq(0).html();
@@ -37,6 +62,7 @@ $('tbody').children().each((i)=>{
   console.log({id, pid});
 
   row.eq(5).children().each((ii)=>{
+    const btn = row.eq(5).children().eq(ii);
     const link = btn.attr('href');
     const tmp = window.location.href.split('/');
     const CURRENT_PAGE = tmp[tmp.length-1];
@@ -46,7 +72,8 @@ $('tbody').children().each((i)=>{
         const x = link.split(CURRENT_PAGE+'/edit/');
         //use a ? like this when adding it back with a name
 
-          echo "btn.attr('href', x[0] + 'createbooking?pid='+pid);";
+          btn.attr('href', 'javascript: void(0)');
+          btn.attr('onclick', `delete_row('http://localhost:8080/orders/index.php/main/userbooking/delete/${id}', '${x[0]}createbooking?pid=${pid}');`);
         
     }
   });
