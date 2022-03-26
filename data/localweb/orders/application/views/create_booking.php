@@ -29,19 +29,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($err)){
         // Prepare a select statement
-      $sql = "SELECT id FROM performance WHERE id = ?";
+      $sql1 = "SELECT Screen.seats - IFNULL(sum(booking.seats), 0) as seats_left
+			FROM performance
+			LEFT JOIN booking
+			ON (Performance.id = booking.performance)
+			JOIN Screen
+			ON ((Performance.screen = Screen.screen) AND (Performance.cinema = Screen.Cinema))
+			WHERE performance.id = ? GROUP BY performance.id
+			";
+      $sql2 = "SELECT id FROM performance WHERE id=?;";
 
-      $query = $this->db->query($sql, [$performance]);                
+      $seatquery = $this->db->query($sql1, [$performance]); 
+      $query = $this->db->query($sql2, [$performance]);                
       
-       if($query->num_rows() == 1){                    
-             echo 'valid data, TODO: add to db and forward to booking/view/X';
-             $id = rand();
-             $sql = "INSERT INTO booking(id, seats, performance, member) VALUES(?, ?, ?, ?)";
-             $query2 = $this->db->query($sql, [$id, $seat, $performance, $uid]); 
-	     header("location: booking/read/".$id);
-
+       if($query->num_rows() == 1){   
+             if($seatquery->num_rows() == 0 || $seatquery->row()->seats_left - (int)$seat >= 0) {             
+                 $id = rand();
+                 $sql = "INSERT INTO booking(id, seats, performance, member) VALUES(?, ?, ?, ?)";
+                 $this->db->query($sql, [$id, $seat, $performance, $uid]); 
+	         header("location: booking/read/".$id);
+             } else{
+                 $err = "There are not enough seats available for this screening";
+             }
        } else{
-             // Username doesn't exist, display a generic error message
              $err = "Invalid performance id.";
        }
 
