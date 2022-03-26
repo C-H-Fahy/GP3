@@ -29,5 +29,48 @@ foreach($css_files as $file): ?>
     <div class="Table__Perf">
 		<?php echo $output; ?>
     </div>
+
+<script>
+const actions = $('a.edit_button[href]');
+actions.each((i)=>{
+    const btn = actions.eq(i);
+    const link = btn.attr('href');
+    const tmp = window.location.href.split('/');
+    const CURRENT_PAGE = tmp[tmp.length-1];
+
+    if(link.includes('read')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/read/');
+        //use a ? like this when adding it back with a name
+        btn.attr('href', x[0] + 'createbooking?pid='+x[1]);
+    }
+
+    if(link.includes('edit')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/edit/');
+        //use a ? like this when adding it back with a name
+        <?php 
+        if($_SESSION['role'] !== 'manager'){
+          echo "btn.attr('href', '');";
+        }else{
+          //echo "btn.attr('href', x[0] + 'createbooking?pid='+x[1]);";
+        }
+        ?>
+    }
+
+});
+
+const deletebtn = $('a.delete_button[onclick]');
+deletebtn.each((i)=>{
+    const btn = deletebtn.eq(i);
+    <?php
+    if($_SESSION['role'] !== 'manager'){
+      echo "btn.attr('onclick', '');";
+    }else{
+      echo "";
+    }
+    ?>
+});
+</script>
 </body>
 </html>

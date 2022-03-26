@@ -16,6 +16,12 @@ class Main extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('home');
 	}
+
+	public function createbooking()
+	{	
+		$this->load->view('header');
+		$this->load->view('create_booking');
+	}
 	
 	public function cinema()
 	{	

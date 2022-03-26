@@ -29,5 +29,46 @@ foreach($css_files as $file): ?>
     <div class="Table__Cinemas">
 		<?php echo $output; ?>
     </div>
+
+
+<script>
+const actions = $('a.edit_button[href]');
+actions.each((i)=>{
+    const btn = actions.eq(i);
+    const link = btn.attr('href');
+    const tmp = window.location.href.split('/');
+    const CURRENT_PAGE = tmp[tmp.length-1];
+
+    if(link.includes('read')){
+        //users can still view
+    }
+
+    if(link.includes('edit')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/edit/');
+        //use a ? like this when adding it back with a name
+        <?php 
+        if($_SESSION['role'] !== 'manager'){
+          echo "btn.attr('href', '');";
+        }else{
+          //allow default edit
+        }
+        ?>
+    }
+
+});
+
+const deletebtn = $('a.delete_button[onclick]');
+deletebtn.each((i)=>{
+    const btn = deletebtn.eq(i);
+    <?php
+    if($_SESSION['role'] !== 'manager'){
+      echo "btn.attr('onclick', '');";
+    }else{
+      //allow default edit
+    }
+    ?>
+});
+</script>
 </body>
 </html>
