@@ -30,11 +30,13 @@ INSERT INTO Member
 		(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', '$2y$10$MbxtBf6xTaCLhz2mcFQ0CeYTmRFGzb4pW.ztUkum6p0J1snGXUFRS'),
 		(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', '$2y$10$uZi.OEtK/d2HpmlSWB2jPewebL0zu2DlQwJmbfwdn7NQwVxPeBZ52')
 ;
-
 INSERT INTO Member
-		(id, name, joined, active, role_type, password)
+		(id, title, name, joined, active, role_type, password)
 	VALUES
-		(1, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW')
+		(1, Null, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$yTI.pu90o0ssPFQAiM7AkuBcGxM/.Zbk4UkMXRJJzr6W8in6fUsDW'),
+		(DEFAULT, Null, 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$eF7x2SuwqcFh/SuYSqPtVuwY0gzzA6.LVZxA.N/waCD596eRE6Q4C'),
+		(DEFAULT, Null, 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$M5SltbZMN1kYelm6YVOU5Oe.ad40F/RdklIJvznriAk7q/kOLv.9W')
+
 ;
 	
 INSERT INTO Film
