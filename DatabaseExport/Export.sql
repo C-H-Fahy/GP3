@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 01:34 AM
+-- Generation Time: Mar 27, 2022 at 01:42 AM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -72,6 +72,19 @@ INSERT INTO `cinema` (`id`, `name`, `location`, `address`, `manager`) VALUES
 (2, 'Phoenix', 'Hitchin', '2, Swan Lane', 'Mary Jobs'),
 (3, 'Rialto', 'Stevenage', '6, London Rd', 'Tuhaj Bey'),
 (4, 'Intimate', 'Watford', '3, Broad Ave', 'Marek Huk');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrylogs`
+--
+
+CREATE TABLE IF NOT EXISTS `entrylogs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
