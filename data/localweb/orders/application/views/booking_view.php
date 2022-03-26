@@ -22,7 +22,7 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 <?php
-if($_SESSION['role'] === 'member'){
+if($_SESSION['role'] === 'member' && !strpos($_SERVER['REQUEST_URI'], 'read')){
     echo "You do not have permission to view this page";
     return;
 }
