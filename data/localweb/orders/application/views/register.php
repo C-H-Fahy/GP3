@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!$_SESSION || $_SESSION['role'] !== 'manager' && $_SESSION['role'] !== 'receptionist'){
+    echo "You do not have permission to view this page";
+    return;
+}
+
 // Define variables and initialize with empty values
 $title = "TEST";
 $username = $password = $confirm_password = "";

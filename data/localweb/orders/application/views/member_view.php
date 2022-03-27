@@ -21,6 +21,13 @@
 </head>
 <body>
 
+<?php
+if($_SESSION['role'] === 'member' || $_SESSION['role'] === 'usher'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
+
 <h1>Members</h1>
 	<p class="p-centre">
 		This table documents registered members and staff on the system.

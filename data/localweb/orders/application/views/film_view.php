@@ -22,6 +22,13 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 
+<?php
+if($_SESSION['role'] === 'member'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
+
 <h1>Films</h1>
 <p class="p-centre">
 	This table shows the Films available to be scheduled into Performances.
