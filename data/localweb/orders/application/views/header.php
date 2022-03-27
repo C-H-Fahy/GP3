@@ -29,13 +29,17 @@
         if($_SESSION && $_SESSION["loggedin"] === 1){
             echo "<ul class='nav'><li><a class='button' href='" . site_url('') . "'>Home</a></li>" 
                 . "<li><a class='button' href='" . site_url('main/cinema') . "'>Cinemas</a></li>"
-                . "<li><a class='button' href='" . site_url('main/screen') . "'>Screens</a></li>"
+                . "<li><a class='button' href='" . site_url('main/performance') . "'>Performances</a></li>";
+          if($_SESSION["role"] !== 'member')
+            echo "<li><a class='button' href='" . site_url('main/screen') . "'>Screens</a></li>"
                 . "<li><a class='button' href='" . site_url('main/film') . "'>Film</a></li>"
                 . "<li><a class='button' href='" . site_url('main/member') . "'>Members</a></li>"
-                . "<li><a class='button' href='" . site_url('main/performance') . "'>Performances</a></li>" 
                 . "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
-                . "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>"
-                . "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>";
+                . "<li><a class='button' href='" . site_url('main/checkin') . "'>Checkin Guest</a></li>";
+          if($_SESSION["role"] === 'manager')
+                echo "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>";
+
+            echo "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>";
         }
         ?>
     </div>

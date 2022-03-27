@@ -126,10 +126,7 @@ class Main extends CI_Controller {
 		
 		
 		
-		
-		
-
-		
+        	$crud->columns(['id', 'released', 'title', 'director']);
 		$output = $crud->render();
 		$this->film_output($output);
 	}
@@ -159,6 +156,23 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('booking_view.php', $output);
 	}
+
+
+	public function checkin()
+	{
+		$this->load->view('header');
+		//$crud = new grocery_CRUD();
+
+        	$this->checkin_output();
+    	}
+
+	function checkin_output($output = null)
+	{
+		$this->load->view('checkin.php', $output);
+	}
+
+
+
 	
 	function film_output($output = null)
 	{
@@ -174,7 +188,8 @@ class Main extends CI_Controller {
 		$crud->set_subject('member');
 		
 		
-		
+	
+        	$crud->columns(['ID', 'title', 'name', 'joined', 'active']);
 		$crud->required_fields('title', 'name', 'status');
 		
 		

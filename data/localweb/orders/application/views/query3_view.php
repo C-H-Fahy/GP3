@@ -56,7 +56,12 @@
     </style>
 </head>
 <body>
-
+<?php
+if($_SESSION['role'] !== 'manager'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
 <h1>Queries</h1>
 <div align='center'>
     <p class="p-centre">

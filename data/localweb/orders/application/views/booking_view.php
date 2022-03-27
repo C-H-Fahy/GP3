@@ -21,7 +21,12 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 </head>
 <body>
-
+<?php
+if($_SESSION['role'] === 'member'){
+    echo "You do not have permission to view this page";
+    return;
+}
+?>
 <h1>Bookings</h1>
 <p class="p-centre">
 	This table keeps track of each customer's Bookings for a scheduled Performance.
