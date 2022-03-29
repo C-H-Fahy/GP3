@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<style>
-        .nav {display: inline-grid; grid-template-columns: auto auto auto auto auto auto auto auto auto auto; justify-content: center; font-family: 'Open Sans', sans-serif; font-size: 14px; width: 100%; float: left; margin: 0 0 1em 0; padding: 0; list-style: none;}
+        .nav {display: inline-grid; grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto; justify-content: center; font-family: 'Open Sans', sans-serif; font-size: 14px; width: 100%; float: left; margin: 0 0 1em 0; padding: 0; list-style: none;}
         .nav {list-style: none; border:0;}
         .rightnav { list-style: none; }
         .nav li { float: left; }
@@ -35,9 +35,11 @@
                 . "<li><a class='button' href='" . site_url('main/film') . "'>Film</a></li>"
                 . "<li><a class='button' href='" . site_url('main/member') . "'>Members</a></li>"
                 . "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
-                . "<li><a class='button' href='" . site_url('main/checkin') . "'>Checkin Guest</a></li>";
+                . "<li><a class='button' href='" . site_url('main/checkin') . "'>Guest Check-In</a></li>"
+                . "<li><a class='button' href='" . site_url('main/register') . "'>Register</a></li>";
           if($_SESSION["role"] === 'manager')
                 echo "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>";
+                
 
             echo "<li><a class='button-logout' href='" . site_url('main/login') . "'>Log Out</a></li>";
         }
