@@ -10,8 +10,8 @@ CREATE TABLE Cinema(
 CREATE TABLE Screen(
     cinema int, 
     screen int,
-    seats int NOT NULL,
-    price int NOT NULL,
+    seats int unsigned NOT NULL,
+    price int unsigned NOT NULL,
     FOREIGN KEY(cinema) REFERENCES Cinema(id),
     PRIMARY KEY(cinema, screen)
     );
@@ -43,7 +43,7 @@ CREATE TABLE `member`(
   title char(15) DEFAULT NULL,
   name char(255) NOT NULL UNIQUE,
   joined date DEFAULT NULL,
-  active char(31) DEFAULT NULL DEFAULT 'Active',
+  active char(31) DEFAULT 'Active',
   role_type char(16) DEFAULT 'member',
   password char(100) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -54,7 +54,7 @@ CREATE TABLE Booking(
     id int AUTO_INCREMENT,
     member int,
     performance int NOT NULL,
-    seats int NOT NULL,
+    seats int unsigned NOT NULL,
     Primary Key(ID),
     FOREIGN KEY (member) REFERENCES Member(ID),
     FOREIGN KEY (performance) REFERENCES Performance(ID)
