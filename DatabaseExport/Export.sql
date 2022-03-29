@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2022 at 11:13 PM
+-- Generation Time: Mar 29, 2022 at 11:22 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `performance` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cinema` int(10) unsigned NOT NULL,
   `screen` int(10) unsigned NOT NULL,
-  `film` int(10) unsigned DEFAULT NULL,
+  `film` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`id`),
