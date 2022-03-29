@@ -1,3 +1,22 @@
+<?php
+
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === 1){
+    session_destroy();
+}
+ 
+// Define variables and initialize with empty values
+$perfID = $password = "";
+$username_err = $password_err = $login_err = "";
+ 
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +45,9 @@ foreach($css_files as $file): ?>
 <p class="p-centre">
 	This table keeps a record of the scheduled Performances at a given Cinema.
 </p>
+
+<p>View bookings effected by cancelling a performance <a href="<?php echo site_url('main/cancel_check')?>">Sign up now</a>.</p>
+
     <div class="Table__Perf">
 		<?php echo $output; ?>
     </div>
@@ -75,3 +97,4 @@ deletebtn.each((i)=>{
 </script>
 </body>
 </html>
+
