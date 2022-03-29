@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 03:17 AM
+-- Generation Time: Mar 29, 2022 at 10:08 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `member` int(11) DEFAULT NULL,
   `performance` int(11) NOT NULL,
-  `seats` int(11) NOT NULL,
+  `seats` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `member` (`member`),
   KEY `performance` (`performance`)
@@ -202,8 +202,8 @@ INSERT INTO `performance` (`id`, `cinema`, `screen`, `film`, `date`, `time`) VAL
 CREATE TABLE IF NOT EXISTS `screen` (
   `cinema` int(11) NOT NULL DEFAULT '0',
   `screen` int(11) NOT NULL DEFAULT '0',
-  `seats` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `seats` int(10) unsigned NOT NULL,
+  `price` int(10) unsigned NOT NULL,
   PRIMARY KEY (`cinema`,`screen`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
