@@ -6,7 +6,7 @@ if(!$_SESSION || $_SESSION['role'] !== 'manager' && $_SESSION['role'] !== 'recep
 }
 
 // Define variables and initialize with empty values
-$title = "";
+$title = "TEST";
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
  
@@ -16,8 +16,8 @@ $this->table->set_template(array());
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
-    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-        $username_err = "Username can only contain letters, numbers, and underscores.";
+    } elseif(!preg_match('/^[a-zA-Z0-9_ -]+$/', trim($_POST["username"]))){
+        $username_err = "Username can only contain letters, numbers, spaces, and underscores.";
     } else{
             // Set parameters
             $param_username = trim($_POST["username"]);
@@ -55,6 +55,8 @@ $this->table->set_template(array());
         }
     }
     
+    $title = trim($_POST["title"]);
+
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
