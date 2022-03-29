@@ -1,6 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$_SESSION['PerfID'] = 0;
 
 class Main extends CI_Controller {
 	 
@@ -17,6 +16,12 @@ class Main extends CI_Controller {
 	{	
 		$this->load->view('header');
 		$this->load->view('home');
+	}
+
+	public function createbooking()
+	{	
+		$this->load->view('header');
+		$this->load->view('create_booking');
 	}
 	
 	public function cinema()
@@ -133,7 +138,7 @@ class Main extends CI_Controller {
     }
 	else{
 		
-		}$hi = 0;
+	$hi = 0; }
 		
 		
 		$crud->basic_model->set_query(
@@ -193,6 +198,32 @@ class Main extends CI_Controller {
 		$this->film_output($output);
 	}
 	
+	public function userbooking()
+	{
+		$this->load->view('header');
+		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
+		$crud->set_theme('datatables');
+		$crud->set_table('booking');
+		$crud->basic_model->set_query(
+		'SELECT Booking.*, Film.title AS Film_title
+		FROM Booking
+		JOIN Performance
+		ON (Booking.performance = Performance.id)
+		JOIN Film
+		ON (Performance.film = Film.id)
+                WHERE member='.$_SESSION['id']);
+
+        	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
+        	$output = $crud->render();
+        	$this->userbooking_output($output);
+    	}
+	function userbooking_output($output = null)
+	{
+		$this->load->view('user_booking_view.php', $output);
+	}
+
+	
 	public function booking()
 	{
 		$this->load->view('header');
@@ -218,6 +249,23 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('booking_view.php', $output);
 	}
+
+
+	public function checkin()
+	{
+		$this->load->view('header');
+		//$crud = new grocery_CRUD();
+
+        	$this->checkin_output();
+    	}
+
+	function checkin_output($output = null)
+	{
+		$this->load->view('checkin.php', $output);
+	}
+
+
+
 	
 	function film_output($output = null)
 	{
@@ -277,6 +325,11 @@ public function login()
 	{
 		$this->load->view('header');
 		$this->load->view('query3_view');
+	}
+	public function query4()
+	{
+		$this->load->view('header');
+		$this->load->view('query4_view');
 	}
 
 	public function blank()

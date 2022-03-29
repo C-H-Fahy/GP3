@@ -1,6 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$_SESSION['PerfID'] = 0;
 
 class Main extends CI_Controller {
 	 

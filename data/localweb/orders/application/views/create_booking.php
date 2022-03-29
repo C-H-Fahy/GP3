@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if seats is empty
     $seat = trim($_POST["seats"]);
     if(empty($seat) || !(is_numeric($seat) && (int)$seat > 0)){
-        $err = "Please enter a number of seats.";
+        $err = "Please enter a valid number of seats.";
         $seat = '1';
     }
      
