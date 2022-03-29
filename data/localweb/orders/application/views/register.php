@@ -1,12 +1,12 @@
 <?php
-session_start();
+// session_start();
 if(!$_SESSION || $_SESSION['role'] !== 'manager' && $_SESSION['role'] !== 'receptionist'){
     echo "You do not have permission to view this page";
     return;
 }
 
 // Define variables and initialize with empty values
-$title = "TEST";
+$title = "";
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
  
@@ -85,23 +85,38 @@ $this->table->set_template(array());
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body { font: 1em sans-serif; margin: 8px;}
-        h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; margin-bottom: 25px;}
-        .wrapper{ width: 360px; margin: auto; margin-top: 21px; padding: 20px; }
+        h1 { margin-top: 1em; text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; margin-bottom: 25px;}
+        .Text__Wrapper { width: 50%; margin: auto; margin-top: 21px; padding-top: 20px; }
+        .Form__Wrapper{ width: 360px; margin: auto; margin-top: 21px; }
         .btn-primary {  padding: 4px 15px; background-color: purple; border: 0px; border-radius: 6px;}
         .btn-secondary { padding: 4px 15px; border-radius: 6px; background: #f2f2f2; color: black; border: 0px;}
         .btn-primary:hover { background-color: black; color: white; }
+        p {text-align: center;}
+        /* .form-control { width: 50%; margin: auto; margin-top: 21px; padding: 20px; }} */
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="Text__Wrapper">
         <h1>Sign Up</h1>
-        <p>Please fill this form to create an account.</p>
+        <p>Please fill this form to create an account for a customer applying for membership.</p>
+    </div>
+    <div class="Form__Wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
-                <label>Username</label>
+                <label>Title</label>
+                <select name="title" class="form-control" value="<?php echo $title; ?>">
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Miss</option>
+                    <option>Ms</option>
+                    <option>Dr</option>
+                </select>
+            </div>    
+            <div class="form-group">
+                <label>Customer Name</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
+            </div>       
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
@@ -116,7 +131,7 @@ $this->table->set_template(array());
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
-            <p>Already have an account? <a href="<?php echo site_url('main/login')?>">Login here</a>.</p>
+            Already have an account? <a href="<?php echo site_url('main/login')?>">Login here</a>.
         </form>
     </div>    
 </body>
