@@ -2,9 +2,7 @@
 
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === 1){
-    session_destroy();
-}
+
  
 // Define variables and initialize with empty values
 $perfID = $password = "";
@@ -46,11 +44,55 @@ foreach($css_files as $file): ?>
 	This table keeps a record of the scheduled Performances at a given Cinema.
 </p>
 
-<p>View bookings effected by cancelling a performance <a href="<?php echo site_url('main/cancel_check_first')?>">Sign up now</a>.</p>
+<p>View bookings effected by cancelling a performance <a href="<?php echo site_url('main/cancel_check')?>">Sign up now</a>.</p>
 
     <div class="Table__Perf">
 		<?php echo $output; ?>
     </div>
+
+<script>
+const actions = $('a.edit_button[href]');
+actions.each((i)=>{
+    const btn = actions.eq(i);
+    const link = btn.attr('href');
+    const tmp = window.location.href.split('/');
+    const CURRENT_PAGE = tmp[tmp.length-1];
+
+    if(link.includes('read')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/read/');
+        //use a ? like this when adding it back with a name
+        btn.attr('href', x[0] + 'createbooking?pid='+x[1]);
+        btn.children().eq(1).html('Book Now');
+    }
+
+    if(link.includes('edit')){
+        //split localhost.... and the rows ID
+        const x = link.split(CURRENT_PAGE+'/edit/');
+        //use a ? like this when adding it back with a name
+        <?php 
+        if($_SESSION['role'] !== 'manager'){
+          echo "btn.remove()";
+        }else{
+          //echo "btn.attr('href', x[0] + 'createbooking?pid='+x[1]);";
+        }
+        ?>
+    }
+
+});
+
+const deletebtn = $('a.delete_button[onclick]');
+deletebtn.each((i)=>{
+    const btn = deletebtn.eq(i);
+    <?php
+    if($_SESSION['role'] !== 'manager'){
+      echo "btn.remove()";
+    }else{
+      echo "";
+    }
+    ?>
+});
+</script>
 </body>
 </html>
 
