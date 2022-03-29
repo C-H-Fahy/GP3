@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2022 at 10:08 PM
+-- Generation Time: Mar 29, 2022 at 11:13 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -27,9 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `booking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `member` int(11) DEFAULT NULL,
-  `performance` int(11) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `member` int(10) unsigned DEFAULT NULL,
+  `performance` int(10) unsigned NOT NULL,
   `seats` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `member` (`member`),
@@ -54,7 +54,7 @@ INSERT INTO `booking` (`id`, `member`, `performance`, `seats`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `cinema` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` char(255) NOT NULL,
   `location` char(255) DEFAULT NULL,
   `address` text,
@@ -80,7 +80,7 @@ INSERT INTO `cinema` (`id`, `name`, `location`, `address`, `manager`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `entrylogs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `time` time NOT NULL,
   PRIMARY KEY (`id`)
@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `entrylogs` (
 --
 
 CREATE TABLE IF NOT EXISTS `film` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `released` int(11) DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `released` int(10) unsigned DEFAULT NULL,
   `title` char(255) NOT NULL,
   `director` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -126,7 +126,7 @@ INSERT INTO `film` (`id`, `released`, `title`, `director`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `member` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` char(15) DEFAULT NULL,
   `name` char(255) NOT NULL,
   `joined` date DEFAULT NULL,
@@ -161,10 +161,10 @@ INSERT INTO `member` (`ID`, `title`, `name`, `joined`, `active`, `role_type`, `p
 --
 
 CREATE TABLE IF NOT EXISTS `performance` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cinema` int(11) NOT NULL,
-  `screen` int(11) NOT NULL,
-  `film` int(11) DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `cinema` int(10) unsigned NOT NULL,
+  `screen` int(10) unsigned NOT NULL,
+  `film` int(10) unsigned DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -200,8 +200,8 @@ INSERT INTO `performance` (`id`, `cinema`, `screen`, `film`, `date`, `time`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `screen` (
-  `cinema` int(11) NOT NULL DEFAULT '0',
-  `screen` int(11) NOT NULL DEFAULT '0',
+  `cinema` int(10) unsigned NOT NULL DEFAULT '0',
+  `screen` int(10) unsigned NOT NULL DEFAULT '0',
   `seats` int(10) unsigned NOT NULL,
   `price` int(10) unsigned NOT NULL,
   PRIMARY KEY (`cinema`,`screen`)
