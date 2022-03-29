@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+$_SESSION['PerfID'] = 0;
+
 class Main extends CI_Controller {
 	 
 	 function __construct()
@@ -84,6 +86,7 @@ class Main extends CI_Controller {
 	}
 	public function performance()
 	{
+		
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
 		$crud->set_model('custom_model');
@@ -102,12 +105,68 @@ class Main extends CI_Controller {
 			JOIN Cinema
 			ON (Performance.cinema = cinema.id)
 			GROUP BY performance.id
-			')
-		;
+			');
+			
+		
+  
+
+		
+		
+			
+			
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
         $output = $crud->render();
         $this->performance_output($output);
     }
+	
+	
+	
+	
+	public function cancel_check()
+	{
+		
+		$this->load->view('header');
+		$crud = new grocery_CRUD();
+		$crud->set_model('custom_model');
+		$crud->set_theme('datatables');
+		$crud->set_table('booking');
+		$crud->set_subject('bookings');
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    
+        $hi = $_POST['PerfID'];
+    }
+	else{
+		
+	$hi = 0; }
+		
+		
+		$crud->basic_model->set_query(
+			"SELECT booking.*, id as bookingID, performance, seats
+			FROM Booking where performance = '$hi'"
+			
+			
+			);
+			
+		
+  
+
+		
+		
+			
+			
+        $crud->columns(['bookingID', 'performance', 'seats']);
+        $output = $crud->render();
+        $this->delete_output($output);
+    }
+	
+	
+	function delete_output($output = null)
+	{
+		$this->load->view('affectedbookings_view.php', $output);
+
+	}
 	function performance_output($output = null)
 	{
 		$this->load->view('performance_view.php', $output);
@@ -251,7 +310,7 @@ public function login()
 	{	
 		$this->load->view('login');
 	}
-		
+	
 	public function query1()
 	{	
 		$this->load->view('header');
