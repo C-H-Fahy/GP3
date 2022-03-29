@@ -59,7 +59,6 @@
     <h1>MICE Cinemas</h1>
 
     <p class="p-centre">You are <?php 
-
         //echo implode(',', $_SESSION);
         if($_SESSION && $_SESSION["loggedin"] === 1){
             echo " a " . $_SESSION["role"] . ", " . $_SESSION["name"] . ".";
@@ -73,7 +72,7 @@
         if($_SESSION && $_SESSION["loggedin"]){
             echo "<ul class='nav'><li><a class='button' href='" . site_url('main/login') . "'>Signout</a></li>";
         }else{
-            echo "<ul class='nav'><li><a class='button' href='" . site_url('main/login') . "'>Login</a></li>" . "<li><a class='button' href='" . site_url('main/register') . "'>Register</a></li>";
+            echo "<ul class='nav'><li><a class='button' href='" . site_url('main/login') . "'>Login</a></li>";
         }
         ?>
     </p>
