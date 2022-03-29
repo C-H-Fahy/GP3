@@ -37,18 +37,18 @@ CREATE TABLE Performance(
     film int unsigned,
     date date,
     time time,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY (cinema) REFERENCES cinema(ID), 
+    FOREIGN KEY (film) REFERENCES Film(ID),
+    FOREIGN KEY (cinema, screen) REFERENCES Screen(cinema, screen)
     )
 ENGINE=InnoDB;
 ALTER TABLE Performance 
-    ADD CONSTRAINT Performance UNIQUE (cinema, screen, date, time),
-    ADD FOREIGN KEY (cinema) REFERENCES cinema(ID), 
-    ADD FOREIGN KEY (film) REFERENCES Film(ID),
-    ADD FOREIGN KEY (cinema, screen) REFERENCES Screen(cinema, screen);
+    ADD CONSTRAINT Performance UNIQUE (cinema, screen, date, time);
 
-CREATE TABLE `member`(
+CREATE TABLE Member(
     ID int unsigned NOT NULL AUTO_INCREMENT,
-    title char(15) DEFAULT NULL,
+    title char(15),
     name char(255) NOT NULL UNIQUE,
     joined date DEFAULT NULL,
     active char(31) DEFAULT 'Active',
@@ -69,6 +69,7 @@ CREATE TABLE Booking(
     FOREIGN KEY (performance) REFERENCES Performance(ID)
     )
 ENGINE=InnoDB;
+
 CREATE TABLE entrylogs(
     id int unsigned AUTO_INCREMENT,
     date DATE NOT NULL,
