@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2022 at 11:22 PM
+-- Generation Time: Mar 29, 2022 at 11:30 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `entrylogs` (
 
 CREATE TABLE IF NOT EXISTS `film` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `released` int(10) unsigned DEFAULT NULL,
+  `released` int(11) DEFAULT NULL,
   `title` char(255) NOT NULL,
   `director` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -164,12 +164,12 @@ CREATE TABLE IF NOT EXISTS `performance` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cinema` int(10) unsigned NOT NULL,
   `screen` int(10) unsigned NOT NULL,
-  `film` int(11) DEFAULT NULL,
+  `film` int(10) unsigned DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `film` (`film`),
-  KEY `cinema` (`cinema`,`screen`)
+  UNIQUE KEY `Performance` (`cinema`,`screen`,`date`,`time`),
+  KEY `film` (`film`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --

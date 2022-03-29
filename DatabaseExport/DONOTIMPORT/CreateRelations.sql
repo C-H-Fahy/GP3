@@ -17,7 +17,7 @@ CREATE TABLE Screen(
     );
 CREATE TABLE Film(
     id int unsigned AUTO_INCREMENT,    
-    released int unsigned, 
+    released int, 
     title char(255) NOT NULL,
     director char(255),
     PRIMARY KEY(id)
@@ -29,13 +29,16 @@ CREATE TABLE Performance(
     id int unsigned AUTO_INCREMENT,
     cinema int unsigned NOT NULL,
     screen int unsigned NOT NULL,
-    film int,
+    film int unsigned,
     date date,
     time time,
     PRIMARY KEY(id),
     FOREIGN KEY (cinema) REFERENCES cinema(ID), 
     FOREIGN KEY (film) REFERENCES Film(ID)
     );
+ALTER TABLE Performance 
+    ADD CONSTRAINT Performance UNIQUE (cinema, screen, date, time);
+
 ALTER TABLE Performance ADD FOREIGN KEY (cinema, screen) REFERENCES Screen(cinema, screen);
 
 CREATE TABLE `member`(
