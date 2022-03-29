@@ -36,7 +36,7 @@
                 . "<li><a class='button' href='" . site_url('main/member') . "'>Members</a></li>"
                 . "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
                 . "<li><a class='button' href='" . site_url('main/checkin') . "'>Guest Check-In</a></li>"
-                . "<li><a class='button' href='" . site_url('main/register') . "'>Register</a></li>";
+                . "<li><a class='button' href='" . site_url('main/register') . "'>Register Member</a></li>";
           if($_SESSION["role"] === 'manager')
                 echo "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>";
                 
