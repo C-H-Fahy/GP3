@@ -29,7 +29,7 @@ CREATE TABLE Performance(
     id int unsigned AUTO_INCREMENT,
     cinema int unsigned NOT NULL,
     screen int unsigned NOT NULL,
-    film int unsigned,
+    film int,
     date date,
     time time,
     PRIMARY KEY(id),
