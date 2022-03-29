@@ -1,6 +1,6 @@
 use orders;
 CREATE TABLE Cinema(
-    id int AUTO_INCREMENT,    
+    id int unsigned AUTO_INCREMENT,    
     name char(255) NOT NULL UNIQUE,
     location char(255), 
     address text(511), 
@@ -8,16 +8,16 @@ CREATE TABLE Cinema(
     PRIMARY KEY(id)
     );
 CREATE TABLE Screen(
-    cinema int, 
-    screen int,
+    cinema int unsigned, 
+    screen int unsigned,
     seats int unsigned NOT NULL,
     price int unsigned NOT NULL,
     FOREIGN KEY(cinema) REFERENCES Cinema(id),
     PRIMARY KEY(cinema, screen)
     );
 CREATE TABLE Film(
-    id int AUTO_INCREMENT,    
-    released int, 
+    id int unsigned AUTO_INCREMENT,    
+    released int unsigned, 
     title char(255) NOT NULL,
     director char(255),
     PRIMARY KEY(id)
@@ -26,10 +26,10 @@ ALTER TABLE Film
     ADD CONSTRAINT titledirector UNIQUE (title, director);
 
 CREATE TABLE Performance(
-    id int AUTO_INCREMENT,
-    cinema int NOT NULL,
-    screen int NOT NULL,
-    film int,
+    id int unsigned AUTO_INCREMENT,
+    cinema int unsigned NOT NULL,
+    screen int unsigned NOT NULL,
+    film int unsigned,
     date date,
     time time,
     PRIMARY KEY(id),
@@ -39,7 +39,7 @@ CREATE TABLE Performance(
 ALTER TABLE Performance ADD FOREIGN KEY (cinema, screen) REFERENCES Screen(cinema, screen);
 
 CREATE TABLE `member`(
-  ID int(11) NOT NULL AUTO_INCREMENT,
+  ID int unsigned NOT NULL AUTO_INCREMENT,
   title char(15) DEFAULT NULL,
   name char(255) NOT NULL UNIQUE,
   joined date DEFAULT NULL,
@@ -51,9 +51,9 @@ CREATE TABLE `member`(
 
 
 CREATE TABLE Booking(
-    id int AUTO_INCREMENT,
-    member int,
-    performance int NOT NULL,
+    id int unsigned AUTO_INCREMENT,
+    member int unsigned,
+    performance int unsigned NOT NULL,
     seats int unsigned NOT NULL,
     Primary Key(ID),
     FOREIGN KEY (member) REFERENCES Member(ID),
@@ -61,7 +61,7 @@ CREATE TABLE Booking(
     );
 
 CREATE TABLE entrylogs(
-    id int AUTO_INCREMENT,
+    id int unsigned AUTO_INCREMENT,
     date DATE NOT NULL,
     time TIME NOT NULL,
     Primary Key(ID)
