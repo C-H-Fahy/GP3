@@ -18,12 +18,6 @@
 	
 
 <body>
-<div class="wrapper">
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Performance ID: <input type="number" name="PerfID">
-  <input type="submit">
-</form>
-</div>
 <?php 
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -36,15 +30,24 @@ foreach($css_files as $file): ?>
 
 <h1>Performances</h1>
 <p class="p-centre">
-	This table keeps a record of the scheduled Performances at a given Cinema.
+	This table shows all the cancelled bookings.
 </p>
 
 
-<button type="submit" onclick="location.href='<?php echo site_url('main/performance')?>'">Return to performances view</button>
+<button onclick="location.href='<?php echo site_url('main/performance')?>'">Return to performances view</button>
 
  
     <div class="Table__Perf">
 		<?php echo $output; ?>
     </div>
+<script>
+const btn = $('.add_button');
+btn.remove();
+
+$('tbody').children().each((i)=>{
+  const row = $('tbody').children().eq(i).children();
+  row.eq(3).html('');
+});
+</script>
 </body>
 </html>

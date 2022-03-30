@@ -130,22 +130,16 @@ class Main extends CI_Controller {
 		$crud->set_theme('datatables');
 		$crud->set_table('booking');
 		$crud->set_subject('bookings');
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Check if username is empty
-    
-        $hi = $_POST['PerfID'];
+		if(isset($_GET['PerfID'])){
+        $hi = $_GET['PerfID'];
     }
 	else{
-		
-	$hi = 0; }
+	return; }
 		
 		
 		$crud->basic_model->set_query(
 			"SELECT booking.*, id as bookingID, performance, seats
 			FROM Booking where performance = '$hi'"
-			
-			
 			);
 			
 		
@@ -157,6 +151,12 @@ class Main extends CI_Controller {
 			
         $crud->columns(['bookingID', 'performance', 'seats']);
         $output = $crud->render();
+
+        $query = $this->db->query(
+			"DELETE FROM Booking where performance = ?;", [$hi]);
+        $query = $this->db->query(
+			"DELETE FROM performance where id = ?;", [$hi]);
+
         $this->delete_output($output);
     }
 	
