@@ -9,7 +9,19 @@ $err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $uid = $_SESSION["id"];
+    if($_SESSION["role"] != 'member'){
+      // Check if user is empty
+      if(!isset($_GET['uid']) || empty(trim($_GET['uid']))){
+        $err = "Invalid User";
+      } else{
+        $uid = $_GET['uid'];
+      }
+    }else{
+      $uid = $_SESSION["id"];
+      $active = $_SESSION["active"];
+      if($active != 'Active') { echo "You must have an active membership. ($active)"; return; }
+    }
+    
 
     // Check if seats is empty
     $seat = trim($_POST["seats"]);
@@ -85,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }        
         ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?pid=<?php if(isset($_GET['pid'])) echo $_GET['pid'];?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?pid=<?php if(isset($_GET['pid'])) echo $_GET['pid'];?><?php if(isset($_GET['uid'])) echo '&uid=' . $_GET['uid'];?>" method="post">
             <div class="form-group">
                 <label>Seats</label>
                 <input type="number" name="seats" class="form-control <?php echo (!empty($err)) ? 'is-invalid' : ''; ?>" value="<?php echo $seat; ?>">

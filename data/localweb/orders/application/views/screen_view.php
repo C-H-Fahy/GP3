@@ -26,6 +26,10 @@ if($_SESSION['role'] === 'member'){
     echo "You do not have permission to view this page";
     return;
 }
+
+if($_SESSION['role'] !== 'manager'){
+    echo "$('.add_button').remove();";
+}
 ?>
 <h1>Screens</h1>
 <p class="p-centre">

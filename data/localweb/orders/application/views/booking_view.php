@@ -33,6 +33,16 @@ if($_SESSION['role'] === 'member' && !strpos($_SERVER['REQUEST_URI'], 'read')){
 </p>
     <div class="Table__Booking">
 		<?php echo $output; ?>
+<script>
+
+const btn = $('.add_button');
+const link = btn.attr('href');
+const tmp = window.location.href.split('/');
+const CURRENT_PAGE = tmp[tmp.length-1];
+const x = link.split(CURRENT_PAGE+'/add');
+btn.attr('href', x[0] + 'members');
+ 
+</script>
     </div>
 </body>
 </html>
