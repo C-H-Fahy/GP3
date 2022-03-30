@@ -40,7 +40,19 @@ const link = btn.attr('href');
 const tmp = window.location.href.split('/');
 const CURRENT_PAGE = tmp[tmp.length-1];
 const x = link.split(CURRENT_PAGE+'/add');
-btn.attr('href', x[0] + 'members');
+btn.attr('href', x[0] + 'member');
+
+$('tbody').children().each((i)=>{
+  const row = $('tbody').children().eq(i).children();
+  const uid = row.eq(1).html();
+   
+  row.eq(5).html('');
+  row.eq(5).prepend(
+	`<a href="${x[0]}userbooking?uid=${uid}" class="edit_button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button">
+		<span class="ui-button-icon-primary ui-icon ui-icon-document"></span>
+		<span class="ui-button-text">&nbsp;View Users Bookings</span>
+	</a>`);
+});
  
 </script>
     </div>
