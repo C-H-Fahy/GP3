@@ -22,7 +22,7 @@ foreach($css_files as $file): ?>
 </head>
 <body>
 <?php
-if($_SESSION['role'] === 'member'){
+if($_SESSION['role'] === 'member' && !strpos($_SERVER['REQUEST_URI'], 'read')){
     echo "You do not have permission to view this page";
     return;
 }
@@ -33,6 +33,28 @@ if($_SESSION['role'] === 'member'){
 </p>
     <div class="Table__Booking">
 		<?php echo $output; ?>
+<script>
+
+const btn = $('.add_button');
+const link = btn.attr('href');
+const tmp = window.location.href.split('/');
+const CURRENT_PAGE = tmp[tmp.length-1];
+const x = link.split(CURRENT_PAGE+'/add');
+btn.attr('href', x[0] + 'member');
+
+$('tbody').children().each((i)=>{
+  const row = $('tbody').children().eq(i).children();
+  const uid = row.eq(1).html();
+   
+  row.eq(5).html('');
+  row.eq(5).prepend(
+	`<a href="${x[0]}userbooking?uid=${uid}" class="edit_button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button">
+		<span class="ui-button-icon-primary ui-icon ui-icon-document"></span>
+		<span class="ui-button-text">&nbsp;View Users Bookings</span>
+	</a>`);
+});
+ 
+</script>
     </div>
 </body>
 </html>
