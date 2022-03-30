@@ -55,17 +55,32 @@ function alter_row(delete_url , redirect)
 	return false;
 }
 
+const btn = $('.add_button');
+const link = btn.attr('href');
+const tmp = window.location.href.split('/');
+const CURRENT_PAGE = tmp[tmp.length-1].split("?")[0];
+
+<?php 
+if($_SESSION['role'] !== 'member'){
+     echo "btn.remove();";   
+} else {
+     echo "const x = link.split(CURRENT_PAGE+'/add');btn.attr('href', x[0] + 'performance');";
+} 
+?>
+
+
 $('tbody').children().each((i)=>{
   const row = $('tbody').children().eq(i).children();
   const id = row.eq(0).html();
   const pid = row.eq(2).html();
+  const uid = "<?php if(isset($_GET['uid'])) echo $_GET['uid'];?>";
   console.log({id, pid});
 
   row.eq(5).children().each((ii)=>{
     const btn = row.eq(5).children().eq(ii);
     const link = btn.attr('href');
     const tmp = window.location.href.split('/');
-    const CURRENT_PAGE = tmp[tmp.length-1];
+    const CURRENT_PAGE = tmp[tmp.length-1].split("?")[0];
 
     if(link.includes('edit')){
         //split localhost.... and the rows ID
@@ -73,7 +88,7 @@ $('tbody').children().each((i)=>{
         //use a ? like this when adding it back with a name
 
           btn.attr('href', 'javascript: void(0)');
-          btn.attr('onclick', `alter_row('http://localhost:8080/orders/index.php/main/userbooking/delete/${id}', '${x[0]}createbooking?pid=${pid}');`);
+          btn.attr('onclick', `alter_row('http://localhost:8080/orders/index.php/main/userbooking/delete/${id}', '${x[0]}createbooking?pid=${pid}&uid=${uid}');`);
         
     }
   });

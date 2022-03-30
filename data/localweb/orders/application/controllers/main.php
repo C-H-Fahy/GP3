@@ -206,6 +206,13 @@ class Main extends CI_Controller {
 		$crud->set_theme('datatables');
 		$crud->set_table('booking');
 		$crud->set_subject('Booking');
+
+		$uid = $_SESSION['id'];
+if($_SESSION["role"] != 'member'){
+      if(isset($_GET['uid']) && !empty(trim($_GET['uid']))){
+        $uid = $_GET['uid'];
+      }
+    }
 		$crud->basic_model->set_query(
 		'SELECT Booking.*, Film.title AS Film_title
 		FROM Booking
@@ -213,7 +220,7 @@ class Main extends CI_Controller {
 		ON (Booking.performance = Performance.id)
 		JOIN Film
 		ON (Performance.film = Film.id)
-                WHERE member='.$_SESSION['id']);
+                WHERE member='.$uid);
 
         	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
         	$output = $crud->render();
@@ -283,8 +290,9 @@ class Main extends CI_Controller {
 		
 		
 		
-		$crud->required_fields('title', 'name', 'status');
-		
+		$crud->required_fields('title', 'name', 'active');
+		$crud->columns(['ID', 'title', 'name', 'joined', 'active', 'role_type']);
+        	
 		
 		$output = $crud->render();
 		$this->member_output($output);

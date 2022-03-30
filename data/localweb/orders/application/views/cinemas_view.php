@@ -57,6 +57,10 @@ actions.each((i)=>{
     }
 
 });
+<?php if($_SESSION['role'] !== 'manager'){
+     echo "$('.add_button').remove();";   
+} ?>
+
 
 const deletebtn = $('a.delete_button[onclick]');
 deletebtn.each((i)=>{
