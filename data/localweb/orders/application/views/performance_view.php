@@ -89,11 +89,18 @@ actions.each((i)=>{
 const deletebtn = $('a.delete_button[onclick]');
 deletebtn.each((i)=>{
     const btn = deletebtn.eq(i);
+    const tmp = window.location.href.split('/');
+    const CURRENT_PAGE = tmp[tmp.length-1].split("?")[0];
+    const x = window.location.href.split(CURRENT_PAGE)[0];
+
+    const id = btn.parent().parent().children().eq(0).html();
+    const onclick = `if(confirm('Are you sure you want to cancel a booking')) window.location.href = '${x}cancel_check?PerfID=' + ${id}`;
     <?php
     if($_SESSION['role'] !== 'manager'){
-      echo "btn.remove()";
+         echo "btn.remove()";
     }else{
-      echo "";
+          echo "btn.attr('href', 'javascript: void(0)');";
+          echo "btn.attr('onclick', onclick);";
     }
     ?>
 });
