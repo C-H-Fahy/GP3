@@ -55,13 +55,13 @@ $('tbody').children().each((i)=>{
 	`<a href="${x[0]}userbooking?uid=${uid}" class="edit_button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button">
 		<span class="ui-button-icon-primary ui-icon ui-icon-document"></span>
 		<span class="ui-button-text">&nbsp;View Bookings</span>
-	</a>;`);
+	</a>`);
 
   row.eq(6).prepend(
 	`<a ${onclickBook} class="edit_button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button">
 		<span class="ui-button-icon-primary ui-icon ui-icon-document"></span>
 		<span class="ui-button-text">&nbsp;Book</span>
-	</a>;`);
+	</a>`);
 
 });
 </script>
