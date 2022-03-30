@@ -21,20 +21,22 @@ INSERT INTO Screen
 INSERT INTO Member
 		(id, title, name, joined, active, password)
 	VALUES
-		(1111, 'Ms', 'Helen Miranda', '2017-12-21', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(1234, 'Mr', 'Jose Alves', '2017-12-27', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(1333, 'Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(1344, 'Dr', 'Guy Redmond', '2018-02-09', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(1444, 'Ms', 'Maria Partou', '2018-03-11', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW'),
-		(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW')
+		(1111, 'Ms', 'Helen Miranda', '2017-12-21', 'Active', '$2y$10$ExSVfcy/cMkG8RAAamP4ke0.hxmBaPwxruE2WG3P33Usg18AUZMGW'),
+		(1234, 'Mr', 'Jose Alves', '2017-12-27', 'Active', '$2y$10$M3oW5tL.MWD2g8ZpvNcdiucn27i2KPFg40PFch.xA4eQs//pBUiqy'),
+		(1333, 'Dr', 'Vito Gelato', '2018-01-06', 'Lapsed', '$2y$10$YoPiRYIY5Yhv/sLdHKfDeu8J.RY4OEQCp7O7.sJvEMZGPk/kSSxdO'),
+		(1344, 'Dr', 'Guy Redmond', '2018-02-09', 'Active', '$2y$10$XJhaWazWEx4xYTjgQn4.2OA.HZu.SxdcZFIfcB0VTsWbqe3C4MMTi'),
+		(1444, 'Ms', 'Maria Partou', '2018-03-11', 'Active', '$2y$10$f59uB2XxTSKGAhXH50hBXu1qx9C/3eWCM/q7HvW9SpGWFLv/Dmohe'),
+		(2111, 'Ms', 'Lindsay White', '2018-03-16', 'Cancelled', '$2y$10$Tls7pfUEOVJqlDzuGoeOcuc66AvWRoxbsXSYmxPNYUd3yrGJTS532'),
+		(2121, 'Mr', 'David Wilkinson', '2018-03-18', 'Active', '$2y$10$MbxtBf6xTaCLhz2mcFQ0CeYTmRFGzb4pW.ztUkum6p0J1snGXUFRS'),
+		(3333, 'Ms', 'Olenka Sama', '2018-12-12', 'Active', '$2y$10$uZi.OEtK/d2HpmlSWB2jPewebL0zu2DlQwJmbfwdn7NQwVxPeBZ52')
 ;
-
 INSERT INTO Member
-		(id, name, joined, active, role_type, password)
+		(id, title, name, joined, active, role_type, password)
 	VALUES
-		(1, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$DkCfOzjBMDMDUoIVv0gSku5Q4pch.yk7oxRIupUtwCiA/W9IkAthW')
+		(1, Null, 'admin-test', '2022-03-17', 'Active', 'manager', '$2y$10$yTI.pu90o0ssPFQAiM7AkuBcGxM/.Zbk4UkMXRJJzr6W8in6fUsDW'),
+		(DEFAULT, Null, 'usher-test', '2017-12-21', 'Active', 'usher', '$2y$10$eF7x2SuwqcFh/SuYSqPtVuwY0gzzA6.LVZxA.N/waCD596eRE6Q4C'),
+		(DEFAULT, Null, 'recept-test', '2017-12-21', 'Active', 'receptionist', '$2y$10$M5SltbZMN1kYelm6YVOU5Oe.ad40F/RdklIJvznriAk7q/kOLv.9W')
+
 ;
 	
 INSERT INTO Film

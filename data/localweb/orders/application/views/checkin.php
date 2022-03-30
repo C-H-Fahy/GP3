@@ -5,21 +5,29 @@
 	<style>
 		/* (Task 3.1) Alex: Clear styling of elements in a given screen */
 		h1 { text-align: center; font-size: 2em; font-family: 'Open Sans Light', sans-serif; color: purple; font-weight: 500;}
-		.Table__Cinemas { margin: auto; width: 50%;}
+		.Table__Cinemas { margin: 0 5% 0 5%; }
 		.dataTablesContainer { font-size: 1em; font-family: 'Open Sans', sans-serif; }
 		.DataTables_sort_wrapper { color: purple; }
 		div.dataTables_wrapper .ui-widget-header { background: hsl(220, 12%, 95%); border: 0px solid black; box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);}
 		table.dataTable {box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);}
 		p.p-centre { text-align: center; font-size: 1em; font-family: 'Open Sans', sans-serif; }
+        /* Copied above p class to style check-in. */
+        .form-group { margin: 10px; text-align: center; font-size: 1em; font-family: 'Open Sans', sans-serif; }
+
+        .btn-primary { display: block; margin: auto; width: auto; margin-top: 15px; padding: 4px 15px; background-color: purple; border: 0px; border-radius: 6px; height: 30px; color: white; transition-duration: 0.1s; }
+        .btn-primary:hover { background-color: black; color: white; transition-duration: 0.2s; }
 	</style>
 </head>
 <body>
 
+<h1>Check In</h1>
+
+<p class='p-centre'>
 <?php
 
 $init_view = "<form action=" . htmlspecialchars($_SERVER["PHP_SELF"]) . " method=\"post\">"
 .            "<div class=\"form-group\">"
-.                "<label>Please enter a booking ID below</label>"
+.                "<label>Please enter a booking ID: </label>"
 .                "<input autofocus type=\"text\" name=\"id\" class=\"form-control\">"
 .            "</div>    "
 .            "<div class=\"form-group\">"
@@ -47,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               ."INNER JOIN cinema c ON c.id=p.cinema "
               ."INNER JOIN film f ON f.id=p.film "
               ."WHERE b.id = ?";
-  
+
         $query = $this->db->query($sql, [$id]); 
         $valid = $query->num_rows() == 1;          
 
@@ -62,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     echo "This showing is valid for <b>".$seats."</b> seats at <b>".$name."</b> for the <b>".$time."</b> showing of <b>".$title."</b>";
         }else{
 		$sql = "INSERT INTO entrylogs(date, time) VALUES(NOW(), NOW());";
-         
+
         	$query = $this->db->query($sql); 
             	echo "That is not a valid booking ID<br>This attempt has been logged.";
         }
@@ -73,5 +81,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo $init_view;
 }
 ?>
+</p>
 </body>
 </html>
