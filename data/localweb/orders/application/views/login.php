@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Please enter Username";
     } else{
         $username = trim($_POST["username"]);
     }
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, name, password, role_type, active FROM member WHERE name = ?";
+        $sql = "SELECT id, name, password, role_type FROM member WHERE name = ?";
  
         // Set parameters
         $param_username = $username;
@@ -45,7 +45,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $name = $row->name;
                     $hashed_password = $row->password;
                     $role_type = $row->role_type;
-                    $active = $row->active;
 
                     if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
@@ -55,8 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = 1;
                             $_SESSION["id"] = $id;
                             $_SESSION["name"] = $name;                            
-                            $_SESSION["role"] = $role_type;                       
-                            $_SESSION["active"] = $active;
+                            $_SESSION["role"] = $role_type;
 
                             // Redirect user to welcome page
                             header("location: index");
