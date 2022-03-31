@@ -66,7 +66,7 @@ CREATE TABLE Booking(
     seats int unsigned NOT NULL,
     Primary Key(ID),
     FOREIGN KEY (member) REFERENCES Member(ID),
-    FOREIGN KEY (performance) REFERENCES Performance(ID)
+    FOREIGN KEY (performance) REFERENCES Performance(ID) ON DELETE CASCADE
     )
 ENGINE=InnoDB;
 

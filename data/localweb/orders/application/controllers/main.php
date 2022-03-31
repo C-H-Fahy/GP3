@@ -151,9 +151,6 @@ class Main extends CI_Controller {
 			
         $crud->columns(['bookingID', 'performance', 'seats']);
         $output = $crud->render();
-
-        $query = $this->db->query(
-			"DELETE FROM Booking where performance = ?;", [$hi]);
         $query = $this->db->query(
 			"DELETE FROM performance where id = ?;", [$hi]);
 
