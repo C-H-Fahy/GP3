@@ -29,7 +29,7 @@ if($_SESSION['role'] === 'member'){
 }
 
 if($_SESSION['role'] !== 'manager'){
-    echo "$('.add_button').remove();";
+    echo "<script>$('.add_button').remove();</script>";
 }
 ?>
 
