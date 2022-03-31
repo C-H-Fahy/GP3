@@ -77,6 +77,7 @@ class Main extends CI_Controller {
 		return ('&pound;'.($value/100));
 	}
 	public function performance()
+	
 	{
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
@@ -99,6 +100,10 @@ class Main extends CI_Controller {
 			')
 		;
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
+		$x = explode('/', $_SERVER["REQUEST_URI"]);
+		if($x[count($x)-1] == "add"){
+		$crud->set_relation('cinema','Cinema','name'); 
+		$crud->set_relation('film','film','title'); }
         $output = $crud->render();
         $this->performance_output($output);
     }
