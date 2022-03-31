@@ -71,7 +71,7 @@ if($_SESSION['role'] !== 'manager'){
 </div>
 <div class="Header__Grid">
 	<div class="Header__Text">
-		<h2>Profits From Performances</h2>
+		<h2>Invalid Attempts</h2>
 	</div>
 	<div class="Header__Tooltip">
 		<a class="tooltip">?<span class="bottom">This Query shows logs for invalid screen entry.</span></a>
