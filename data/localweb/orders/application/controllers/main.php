@@ -1,6 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
 class Main extends CI_Controller {
 	 
 	 function __construct()
@@ -16,12 +15,6 @@ class Main extends CI_Controller {
 	{	
 		$this->load->view('header');
 		$this->load->view('home');
-	}
-
-	public function createbooking()
-	{	
-		$this->load->view('header');
-		$this->load->view('create_booking');
 	}
 	
 	public function cinema()
@@ -86,7 +79,6 @@ class Main extends CI_Controller {
 	public function performance()
 	
 	{
-		
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
 		$crud->set_model('custom_model');
@@ -105,15 +97,8 @@ class Main extends CI_Controller {
 			JOIN Cinema
 			ON (Performance.cinema = cinema.id)
 			GROUP BY performance.id
-			');
-			
-		
-  
-
-		
-		
-			
-			
+			')
+		;
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
 		$x = explode('/', $_SERVER["REQUEST_URI"]);
 		if($x[count($x)-1] == "add"){
@@ -122,52 +107,6 @@ class Main extends CI_Controller {
         $output = $crud->render();
         $this->performance_output($output);
     }
-	
-	
-	
-	
-	public function cancel_check()
-	{
-		
-		$this->load->view('header');
-		$crud = new grocery_CRUD();
-		$crud->set_model('custom_model');
-		$crud->set_theme('datatables');
-		$crud->set_table('booking');
-		$crud->set_subject('bookings');
-		if(isset($_GET['PerfID'])){
-        $hi = $_GET['PerfID'];
-    }
-	else{
-	return; }
-		
-		
-		$crud->basic_model->set_query(
-			"SELECT booking.*, id as bookingID, performance, seats
-			FROM Booking where performance = '$hi'"
-			);
-			
-		
-  
-
-		
-		
-			
-			
-        $crud->columns(['bookingID', 'performance', 'seats']);
-        $output = $crud->render();
-        $query = $this->db->query(
-			"DELETE FROM performance where id = ?;", [$hi]);
-
-        $this->delete_output($output);
-    }
-	
-	
-	function delete_output($output = null)
-	{
-		$this->load->view('affectedbookings_view.php', $output);
-
-	}
 	function performance_output($output = null)
 	{
 		$this->load->view('performance_view.php', $output);
@@ -192,47 +131,10 @@ class Main extends CI_Controller {
 		
 		
 		
-		
-		
-
-		
+        	$crud->columns(['id', 'released', 'title', 'director']);
 		$output = $crud->render();
 		$this->film_output($output);
 	}
-	
-	public function userbooking()
-	{
-		$this->load->view('header');
-		$crud = new grocery_CRUD();
-		$crud->set_model('custom_model');
-		$crud->set_theme('datatables');
-		$crud->set_table('booking');
-		$crud->set_subject('Booking');
-
-		$uid = $_SESSION['id'];
-if($_SESSION["role"] != 'member'){
-      if(isset($_GET['uid']) && !empty(trim($_GET['uid']))){
-        $uid = $_GET['uid'];
-      }
-    }
-		$crud->basic_model->set_query(
-		'SELECT Booking.*, Film.title AS Film_title
-		FROM Booking
-		JOIN Performance
-		ON (Booking.performance = Performance.id)
-		JOIN Film
-		ON (Performance.film = Film.id)
-                WHERE member='.$uid);
-
-        	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
-        	$output = $crud->render();
-        	$this->userbooking_output($output);
-    	}
-	function userbooking_output($output = null)
-	{
-		$this->load->view('user_booking_view.php', $output);
-	}
-
 	
 	public function booking()
 	{
@@ -291,10 +193,10 @@ if($_SESSION["role"] != 'member'){
 		$crud->set_subject('member');
 		
 		
+	
+        	$crud->columns(['ID', 'title', 'name', 'joined', 'active']);
+		$crud->required_fields('title', 'name', 'status');
 		
-		$crud->required_fields('title', 'name', 'active');
-		$crud->columns(['ID', 'title', 'name', 'joined', 'active', 'role_type']);
-        	
 		
 		$output = $crud->render();
 		$this->member_output($output);
@@ -313,14 +215,13 @@ if($_SESSION["role"] != 'member'){
 
 public function register()
 	{	
-		$this->load->view('header');
 		$this->load->view('register');
 	}
 public function login()
 	{	
 		$this->load->view('login');
 	}
-	
+		
 	public function query1()
 	{	
 		$this->load->view('header');
@@ -337,11 +238,6 @@ public function login()
 	{
 		$this->load->view('header');
 		$this->load->view('query3_view');
-	}
-	public function query4()
-	{
-		$this->load->view('header');
-		$this->load->view('query4_view');
 	}
 
 	public function blank()

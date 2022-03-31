@@ -31,15 +31,12 @@
                 . "<li><a class='button' href='" . site_url('main/cinema') . "'>Cinemas</a></li>"
                 . "<li><a class='button' href='" . site_url('main/performance') . "'>Performances</a></li>";
           if($_SESSION["role"] !== 'member')
-            echo "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
-                . "<li><a class='button' href='" . site_url('main/screen') . "'>Screens</a></li>"
+            echo "<li><a class='button' href='" . site_url('main/screen') . "'>Screens</a></li>"
                 . "<li><a class='button' href='" . site_url('main/film') . "'>Film</a></li>"
                 . "<li><a class='button' href='" . site_url('main/member') . "'>Members</a></li>"
-                . "<li><a class='button' href='" . site_url('main/checkin') . "'>Checkin Guest</a></li>"
-                . "<li><a class='button' href='" . site_url('main/register') . "'>Register Member</a></li>";
-          else
-            echo "<li><a class='button' href='" . site_url('main/userbooking') . "'>My Bookings</a></li>";
-         
+                . "<li><a class='button' href='" . site_url('main/booking') . "'>Bookings</a></li>"
+                . "<li><a class='button' href='" . site_url('main/checkin') . "'>Guest Check-In</a></li>"
+                . "<li><a class='button' href='" . site_url('main/register') . "'>Register</a></li>";
           if($_SESSION["role"] === 'manager')
                 echo "<li><a class='button' href='" . site_url('main/querynav') . "'>Queries</a></li>";
                 
