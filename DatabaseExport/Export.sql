@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 12:21 AM
+-- Generation Time: Mar 31, 2022 at 02:51 AM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -229,7 +229,7 @@ INSERT INTO `screen` (`cinema`, `screen`, `seats`, `price`) VALUES
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`member`) REFERENCES `member` (`ID`),
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`performance`) REFERENCES `performance` (`id`);
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`performance`) REFERENCES `performance` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `performance`
