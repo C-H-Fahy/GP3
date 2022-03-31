@@ -84,7 +84,6 @@ class Main extends CI_Controller {
 		return ('&pound;'.($value/100));
 	}
 	public function performance()
-	
 	{
 		
 		$this->load->view('header');
@@ -115,10 +114,6 @@ class Main extends CI_Controller {
 			
 			
         $crud->columns(['id', 'cinema_name', 'screen', 'film_title', 'date', 'time', 'seats_left']);
-		$x = explode('/', $_SERVER["REQUEST_URI"]);
-		if($x[count($x)-1] == "add"){
-		$crud->set_relation('cinema','Cinema','name'); 
-		$crud->set_relation('film','film','title'); }
         $output = $crud->render();
         $this->performance_output($output);
     }
@@ -135,16 +130,22 @@ class Main extends CI_Controller {
 		$crud->set_theme('datatables');
 		$crud->set_table('booking');
 		$crud->set_subject('bookings');
-		if(isset($_GET['PerfID'])){
-        $hi = $_GET['PerfID'];
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    
+        $hi = $_POST['PerfID'];
     }
 	else{
-	return; }
+		
+	$hi = 0; }
 		
 		
 		$crud->basic_model->set_query(
 			"SELECT booking.*, id as bookingID, performance, seats
 			FROM Booking where performance = '$hi'"
+			
+			
 			);
 			
 		
@@ -156,9 +157,6 @@ class Main extends CI_Controller {
 			
         $crud->columns(['bookingID', 'performance', 'seats']);
         $output = $crud->render();
-        $query = $this->db->query(
-			"DELETE FROM performance where id = ?;", [$hi]);
-
         $this->delete_output($output);
     }
 	
@@ -207,14 +205,6 @@ class Main extends CI_Controller {
 		$crud->set_model('custom_model');
 		$crud->set_theme('datatables');
 		$crud->set_table('booking');
-		$crud->set_subject('Booking');
-
-		$uid = $_SESSION['id'];
-if($_SESSION["role"] != 'member'){
-      if(isset($_GET['uid']) && !empty(trim($_GET['uid']))){
-        $uid = $_GET['uid'];
-      }
-    }
 		$crud->basic_model->set_query(
 		'SELECT Booking.*, Film.title AS Film_title
 		FROM Booking
@@ -222,7 +212,7 @@ if($_SESSION["role"] != 'member'){
 		ON (Booking.performance = Performance.id)
 		JOIN Film
 		ON (Performance.film = Film.id)
-                WHERE member='.$uid);
+                WHERE member='.$_SESSION['id']);
 
         	$crud->columns(['id', 'member', 'performance', 'Film_title','seats']);
         	$output = $crud->render();
@@ -292,9 +282,8 @@ if($_SESSION["role"] != 'member'){
 		
 		
 		
-		$crud->required_fields('title', 'name', 'active');
-		$crud->columns(['ID', 'title', 'name', 'joined', 'active', 'role_type']);
-        	
+		$crud->required_fields('title', 'name', 'status');
+		
 		
 		$output = $crud->render();
 		$this->member_output($output);
@@ -313,7 +302,6 @@ if($_SESSION["role"] != 'member'){
 
 public function register()
 	{	
-		$this->load->view('header');
 		$this->load->view('register');
 	}
 public function login()
